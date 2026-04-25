@@ -22,7 +22,6 @@ async function fetchRepos() {
 
   } catch (error) {
     document.getElementById("repos").innerHTML = "Erro ao carregar os repositórios 😢";
-    console.error(error);
   }
 }
 
