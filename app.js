@@ -4,7 +4,7 @@ async function fetchRepos() {
     const repos = await response.json();
 
     const container = document.getElementById("repos");
-    container.innerHTML = ""; // limpa o teste anterior
+    container.innerHTML = "";
 
     repos.forEach(repo => {
       const div = document.createElement("div");
