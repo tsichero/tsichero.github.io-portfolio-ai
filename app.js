@@ -6,7 +6,7 @@ async function fetchRepos() {
     const container = document.getElementById("repos");
     container.innerHTML = "";
 
-    // 🔥 Função de Score (Data Science)
+    // 🔥 Função de Score
     function getScore(repo) {
       return (repo.stargazers_count * 2) + repo.forks_count;
     }
@@ -14,13 +14,15 @@ async function fetchRepos() {
     repos.forEach(repo => {
       const div = document.createElement("div");
 
+      // 👇 aplica o estilo de card
+      div.classList.add("card");
+
       div.innerHTML = `
         <h3>${repo.name}</h3>
         <p>${repo.description || "Sem descrição"}</p>
         <p><strong>Linguagem:</strong> ${repo.language || "N/A"}</p>
         <p><strong>Score:</strong> ${getScore(repo)}</p>
         <a href="${repo.html_url}" target="_blank">Ver no GitHub</a>
-        <hr/>
       `;
 
       container.appendChild(div);
