@@ -2,101 +2,716 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>AI Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Tainã Sichero Dulcetti — Especialista em Inteligência Artificial, Dados e soluções de IA.">
+  <title>Tainã Sichero Dulcetti | AI & Data</title>
 
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #0b1220;
-      color: #e5e7eb;
+    :root {
+      --bg: #07111f;
+      --bg-secondary: #0b1728;
+      --card: rgba(15, 29, 48, 0.78);
+      --border: rgba(148, 163, 184, 0.16);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-secondary: #818cf8;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      padding: 40px;
+      padding: 0;
     }
 
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 2rem;
+    html {
+      scroll-behavior: smooth;
     }
 
-    #repos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background: #111827;
-      padding: 20px;
-      border-radius: 16px;
-      border: 1px solid #1f2937;
-      transition: all 0.25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: #38bdf8;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 1.1rem;
-      color: #f9fafb;
-    }
-
-    .desc {
-      font-size: 0.9rem;
-      color: #9ca3af;
-      margin-bottom: 15px;
-      line-height: 1.4;
-    }
-
-    .meta {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      margin-bottom: 15px;
-      color: #cbd5f5;
-    }
-
-    .badge {
-      background: #1f2937;
-      padding: 4px 10px;
-      border-radius: 999px;
+    body {
+      font-family: "Segoe UI", Inter, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(56, 189, 248, 0.10), transparent 30%),
+        radial-gradient(circle at 10% 30%, rgba(129, 140, 248, 0.08), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
     a {
-      display: inline-block;
-      margin-top: 10px;
-      color: #38bdf8;
+      color: inherit;
       text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--max-width));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(7, 17, 31, 0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
       font-size: 0.9rem;
-      font-weight: 500;
+      color: var(--muted);
     }
 
-    a:hover {
-      opacity: 0.8;
+    .nav-links a:hover {
+      color: var(--accent);
     }
 
-    /* 🔥 TOP 3 destaque */
-    .top {
-      border: 1px solid #facc15;
-      background: linear-gradient(135deg, #1e293b, #020617);
-      box-shadow: 0 10px 30px rgba(250, 204, 21, 0.2);
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      padding: 100px 0 80px;
     }
 
-    .top h3 {
-      color: #facc15;
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .profile-photo {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid rgba(56, 189, 248, 0.35);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      justify-self: center;
+    }
+
+    @media (max-width: 800px) {
+      .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .profile-photo {
+        width: 220px;
+        height: 220px;
+        order: -1;
+      }
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 7px 13px;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 999px;
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.06);
+      font-size: 0.82rem;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 7vw, 5.7rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      margin-bottom: 26px;
+    }
+
+    .hero-title {
+      font-size: clamp(1.2rem, 2.4vw, 1.7rem);
+      color: #cbd5e1;
+      margin-bottom: 20px;
+    }
+
+    .hero-title strong {
+      color: var(--accent);
+    }
+
+    .hero-description {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.8;
+      margin-bottom: 34px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(15, 29, 48, 0.75);
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #04111d;
+      border-color: var(--accent);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.035em;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: #cbd5e1;
+      margin-bottom: 18px;
+    }
+
+    .highlight {
+      border-left: 2px solid var(--accent);
+      padding: 8px 0 8px 22px;
+      color: #e2e8f0;
+      font-size: 1.05rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      backdrop-filter: blur(10px);
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.35);
+    }
+
+    .card.featured {
+      grid-column: span 2;
+      border-color: rgba(129, 140, 248, 0.3);
+      background:
+        linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(129, 140, 248, 0.07)),
+        var(--card);
+    }
+
+    .card-label {
+      color: var(--accent);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.08);
+      border: 1px solid var(--border);
+      color: #cbd5e1;
+      font-size: 0.78rem;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-group h3 {
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    .skill-group p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(15, 29, 48, 0.55);
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 5px;
+    }
+
+    .timeline-item .period {
+      color: var(--accent);
+      font-size: 0.82rem;
+      margin-bottom: 12px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+      }
+
+      .about,
+      .cards,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card.featured {
+        grid-column: span 1;
+      }
+
+      .skills {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 80px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 28px, var(--max-width));
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .skills {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <h1>🚀 Meu Portfólio com IA</h1>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">Tainã<span>.</span></a>
 
-  <div id="repos"></div>
+        <ul class="nav-links">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#competencias">Competências</a></li>
+          <li><a href="#experiencia">Experiência</a></li>
+          <li><a href="#formacao">Formação</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-layout">
+          <div class="hero-content">
+
+          <div class="eyebrow">Especialista em Inteligência Artificial</div>
+
+          <h1>Tainã Sichero Dulcetti</h1>
+
+          <p class="hero-title">
+            <strong>Desenvolvedora de Dados e IA</strong> · Médica Veterinária
+          </p>
+
+          <p class="hero-description">
+            Desenvolvimento de soluções que conectam Inteligência Artificial,
+            Dados, tecnologia e conhecimento de domínio para resolver problemas
+            reais e gerar valor para negócios.
+          </p>
+
+          <div class="buttons">
+            <a class="button primary" href="#projetos">Conhecer projetos</a>
+            <a class="button" href="https://github.com/tsichero" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="button" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+
+          </div>
+
+          <img
+            class="profile-photo"
+            src="profile.jpg"
+            alt="Tainã Sichero Dulcetti"
+          >
+
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container">
+
+        <div class="section-label">01 · Sobre</div>
+        <h2 class="section-title">Tecnologia + Dados + Conhecimento de domínio</h2>
+
+        <div class="about">
+
+          <div class="about-text">
+            <p>
+              Sou Especialista em Inteligência Artificial, com MBA em
+              Inteligência Artificial para Negócios e formação em Ciência de
+              Dados em andamento.
+            </p>
+
+            <p>
+              Atuo no desenvolvimento de soluções com Inteligência Artificial
+              Generativa, Machine Learning, análise preditiva, NLP, RAG e
+              automação inteligente, utilizando tecnologias como Python, SQL,
+              FastAPI, APIs e cloud.
+            </p>
+
+            <p>
+              Minha formação como Médica Veterinária contribui para uma visão
+              multidisciplinar, combinando conhecimento de domínio, tecnologia,
+              dados e Inteligência Artificial na construção de soluções para
+              problemas reais.
+            </p>
+          </div>
+
+          <div class="highlight">
+            Desenvolvimento de soluções de IA de ponta a ponta, da estruturação
+            do problema e dos dados à implementação, integração e validação.
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="container">
+
+        <div class="section-label">02 · Projetos</div>
+        <h2 class="section-title">Projetos selecionados</h2>
+
+        <p class="section-intro">
+          Uma seleção de projetos que representa minha atuação em Inteligência
+          Artificial, Dados, automação e desenvolvimento de soluções.
+        </p>
+
+        <div class="cards">
+
+          <article class="card featured">
+            <div class="card-label">Projeto confidencial · Em desenvolvimento</div>
+
+            <h3>Plataforma de Inteligência Artificial aplicada à Medicina Veterinária</h3>
+
+            <p>
+              Projeto em desenvolvimento voltado à aplicação de Inteligência
+              Artificial no contexto da Medicina Veterinária, com foco em apoio
+              à análise de informações, organização de dados e suporte à tomada
+              de decisão profissional.
+            </p>
+
+            <div class="tags">
+              <span class="tag">IA Generativa</span>
+              <span class="tag">LLMs</span>
+              <span class="tag">RAG</span>
+              <span class="tag">Python</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">APIs</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-label">Projetos públicos</div>
+            <h3>Projetos de Dados e Inteligência Artificial</h3>
+
+            <p>
+              Desenvolvimento de aplicações, experimentos e soluções técnicas
+              envolvendo programação, dados, modelos de IA e automação.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Dados</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-label">Estudos e experimentos</div>
+            <h3>Pesquisa e desenvolvimento técnico</h3>
+
+            <p>
+              Estudos práticos voltados à evolução contínua em Inteligência
+              Artificial, engenharia de software, APIs, cloud e automação.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Generative AI</span>
+              <span class="tag">APIs</span>
+              <span class="tag">Azure</span>
+              <span class="tag">Automação</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="competencias">
+      <div class="container">
+
+        <div class="section-label">03 · Competências</div>
+        <h2 class="section-title">Stack e áreas de atuação</h2>
+
+        <div class="skills">
+
+          <div class="card skill-group">
+            <h3>Inteligência Artificial</h3>
+            <p>IA Generativa, LLMs, RAG, NLP, Machine Learning e análise preditiva.</p>
+          </div>
+
+          <div class="card skill-group">
+            <h3>Dados & Desenvolvimento</h3>
+            <p>Python, SQL, APIs, FastAPI, backend, estruturação e análise de dados.</p>
+          </div>
+
+          <div class="card skill-group">
+            <h3>Cloud & Automação</h3>
+            <p>Microsoft Azure, automação de processos, n8n e integração de serviços.</p>
+          </div>
+
+          <div class="card skill-group">
+            <h3>Business & Estratégia</h3>
+            <p>IA aplicada a negócios, identificação de oportunidades e soluções orientadas a dados.</p>
+          </div>
+
+          <div class="card skill-group">
+            <h3>Visualização</h3>
+            <p>Power BI e construção de análises para transformar dados em insights.</p>
+          </div>
+
+          <div class="card skill-group">
+            <h3>Conhecimento de domínio</h3>
+            <p>Medicina Veterinária e experiência prática aplicada à construção de soluções tecnológicas.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia">
+      <div class="container">
+
+        <div class="section-label">04 · Experiência</div>
+        <h2 class="section-title">Experiência profissional</h2>
+
+        <div class="timeline">
+
+          <article class="timeline-item">
+            <h3>Desenvolvedora de Dados e IA | Autônoma</h3>
+            <div class="period">Atuação atual</div>
+            <p>
+              Desenvolvimento de soluções que integram Inteligência Artificial,
+              Dados e automação, desde a estruturação do problema até o
+              desenvolvimento, integração e validação das soluções.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <h3>Tutora EAD | UNINOVE</h3>
+            <div class="period">Educação e tecnologia</div>
+            <p>
+              Atuação no suporte acadêmico e acompanhamento de alunos em
+              ambiente de educação a distância.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <h3>Médica Veterinária</h3>
+            <div class="period">Experiência profissional anterior</div>
+            <p>
+              Experiência em Medicina Veterinária, contribuindo para a formação
+              de conhecimento de domínio e para uma abordagem multidisciplinar
+              na aplicação de tecnologia e Inteligência Artificial.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="formacao">
+      <div class="container">
+
+        <div class="section-label">05 · Formação</div>
+        <h2 class="section-title">Formação acadêmica</h2>
+
+        <div class="education-grid">
+
+          <article class="card">
+            <h3>MBA em Inteligência Artificial para Negócios</h3>
+            <p>Faculdade Exame · Concluído</p>
+          </article>
+
+          <article class="card">
+            <h3>Tecnologia em Ciências de Dados</h3>
+            <p>UNINOVE · Em andamento</p>
+          </article>
+
+          <article class="card">
+            <h3>Medicina Veterinária</h3>
+            <p>FMU · Concluído</p>
+          </article>
+
+          <article class="card">
+            <h3>Pós-graduação em Clínica Médica e Cirúrgica de Pequenos Animais</h3>
+            <p>UNISA · Concluída</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <span>© 2026 Tainã Sichero Dulcetti</span>
+
+        <div class="footer-links">
+          <a href="https://github.com/tsichero" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="app.js"></script>
 
