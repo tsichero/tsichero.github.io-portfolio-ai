@@ -1,126 +1,58 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <title>AI Systems Portfolio | Tatá</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+async function fetchRepos() {
+  try {
+    const response = await fetch("https://api.github.com/users/tsichero/repos");
+    const repos = await response.json();
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #050505;
-      color: white;
+    const container = document.getElementById("repos");
+    container.innerHTML = "";
+
+    function getScore(repo) {
+      return (repo.stargazers_count * 2) + repo.forks_count;
     }
 
-    header {
-      text-align: center;
-      padding: 100px 20px 60px;
+    function generateAIInsight(repo) {
+      const lang = repo.language || "tecnologias diversas";
+
+      if (repo.description) {
+        return `Projeto focado em ${lang}, com objetivo de ${repo.description.toLowerCase()}.`;
+      }
+
+      return `Projeto em ${lang}, com foco em desenvolvimento e prática de engenharia de software.`;
     }
 
-    h1 {
-      font-size: 44px;
-      font-weight: 700;
-      letter-spacing: -1px;
-    }
+    repos.sort((a, b) => getScore(b) - getScore(a));
 
-    .subtitle {
-      color: #9ca3af;
-      margin-top: 12px;
-      font-size: 16px;
-    }
+    repos.forEach((repo, index) => {
+      const div = document.createElement("div");
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
+      div.classList.add("card");
+      if (index < 3) div.classList.add("top");
 
-    .section-title {
-      font-size: 22px;
-      margin-top: 40px;
-      border-left: 3px solid #38bdf8;
-      padding-left: 10px;
-    }
+      div.innerHTML = `
+        <h3>${index < 3 ? "🏆 " : ""}${repo.name}</h3>
 
-    .card {
-      border: 1px solid #1f1f1f;
-      padding: 20px;
-      margin: 15px 0;
-      border-radius: 14px;
-      background: #0b0b0b;
-      transition: 0.3s;
-    }
+        <p class="desc">
+          ${repo.description || "Sem descrição disponível"}
+        </p>
 
-    .card:hover {
-      transform: scale(1.02);
-      border-color: #38bdf8;
-    }
+        <p style="font-size:0.85rem; color:#93c5fd;">
+          🧠 ${generateAIInsight(repo)}
+        </p>
 
-    .tag {
-      color: #38bdf8;
-      font-size: 12px;
-      margin-top: 10px;
-      display: inline-block;
-    }
+        <div class="meta">
+          <span class="badge">💻 ${repo.language || "N/A"}</span>
+          <span class="badge">⭐ ${getScore(repo)}</span>
+        </div>
 
-    input {
-      width: 100%;
-      padding: 14px;
-      margin-top: 20px;
-      background: #111;
-      border: 1px solid #2a2a2a;
-      color: white;
-      border-radius: 10px;
-    }
+        <a href="${repo.html_url}" target="_blank">Ver projeto →</a>
+      `;
 
-    button {
-      margin-top: 10px;
-      padding: 12px 16px;
-      background: #38bdf8;
-      border: none;
-      cursor: pointer;
-      border-radius: 10px;
-      font-weight: bold;
-      color: black;
-    }
+      container.appendChild(div);
+    });
 
-    button:hover {
-      opacity: 0.9;
-    }
+  } catch (error) {
+    document.getElementById("repos").innerHTML = "Erro ao carregar 😢";
+  }
+}
 
-    #resposta {
-      margin-top: 15px;
-      color: #9ca3af;
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <h1>AI Systems that turn data into decisions.</h1>
-  <p class="subtitle">
-    Veterinária • Inteligência Artificial • Data Science • AI Consulting
-  </p>
-</header>
-
-<div class="container">
-
-  <div class="section-title">⚡ AI Systems</div>
-  <div id="projects"></div>
-
-  <div class="section-title">🤖 Ask Tatá AI</div>
-
-  <input id="chatInput" placeholder="Pergunte sobre projetos, IA ou carreira..." />
-  <button onclick="responderIA()">Run AI</button>
-
-  <p id="resposta"></p>
-
-</div>
-
-<script src="dados/projetos.js"></script>
-<script src="app.js"></script>
-
-</body>
-</html>
+fetchRepos();
