@@ -32,7 +32,7 @@ jobs:
         working-directory: projects/automation-data
         run: python generate_report.py
 
-      - name: Run RAG smoke test
+      - name: Run RAG retrieval test
         if: matrix.project == 'rag-llm-lab'
         working-directory: projects/rag-llm-lab
         run: |
@@ -43,7 +43,7 @@ jobs:
         working-directory: projects/data-analytics-lab
         run: PYTHONPATH=. python -m pytest -q
 
-      - name: Run analytics
+      - name: Run analytics pipeline
         if: matrix.project == 'data-analytics-lab'
         working-directory: projects/data-analytics-lab
         run: python analysis.py --input data/sample_co2.csv
