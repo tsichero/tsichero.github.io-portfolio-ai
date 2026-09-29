@@ -8,10 +8,9 @@ Como a emissão de CO₂ do Brasil evoluiu ao longo do tempo e como ela se compa
 
 ## Fonte
 
-Our World in Data — CO₂ dataset:
-https://github.com/owid/co2-data
+Our World in Data — CO₂ dataset.
 
-O projeto baixa a base diretamente no script para manter o processo reproduzível.
+O script usa a fonte pública por padrão e aceita `--input` para execução offline/reprodutível com fixture local.
 
 ## Pipeline
 
@@ -27,15 +26,24 @@ O projeto baixa a base diretamente no script para manter o processo reproduzíve
 
 Python · Pandas · Matplotlib · Data Analysis
 
-## Como executar
+## Executar
 
 ```bash
 pip install -r requirements.txt
 python analysis.py
 ```
 
-Os resultados são gravados em `output/`.
+Para execução determinística sem internet:
 
-## Evidência
+```bash
+python analysis.py --input data/sample_co2.csv
+```
 
-O projeto não depende de uma análise manual: o mesmo comando reconstrói os dados derivados e os indicadores.
+## Evidências
+
+- [Resumo dos indicadores](output/summary.json)
+- [Tabela do último ano](output/latest_indicators.csv)
+- [Gráfico reproduzível](output/co2_trend.svg)
+- [Descrição dos artefatos](output/README.md)
+
+A execução validada com o fixture local reproduz os indicadores de 2024 usados nos artefatos.
