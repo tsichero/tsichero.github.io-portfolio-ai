@@ -20,7 +20,7 @@ Portfólio profissional focado em **evidência prática**: problemas reais, solu
 ### IA aplicada à Medicina Veterinária
 Projeto confidencial em desenvolvimento. Explora IA Generativa, LLMs, RAG, organização de informações e aplicações de IA no contexto veterinário. Detalhes técnicos serão divulgados conforme houver segurança para publicação.
 
-### Data Analytics Lab
+### Data Analytics Engineering
 Projeto técnico orientado a uma demanda típica de Dados: tratamento, exploração, indicadores, visualização e conclusões documentadas.
 **Evidências:** [indicadores](projects/data-analytics-lab/output/summary.json) · [tabela](projects/data-analytics-lab/output/latest_indicators.csv) · [gráfico](projects/data-analytics-lab/output/co2_trend.svg).
 
@@ -32,12 +32,12 @@ API de cadastro com banco de dados, validação, documentação e estrutura prep
 Pipeline Python para leitura de planilhas, tratamento de dados, indicadores e geração automatizada de relatório.
 **Evidências:** [relatório](projects/automation-data/output/report.html) · [por categoria](projects/automation-data/output/revenue_by_category.csv) · [por região](projects/automation-data/output/revenue_by_region.csv).
 
-### RAG & LLM Experiments
-Laboratório de experimentação com recuperação de contexto, avaliação de respostas, prompts e integração de modelos.
+### RAG & LLM Engineering
+Projeto técnico com recuperação de contexto, avaliação de respostas, prompts e integração de modelos.
 **Evidências:** [avaliação](projects/rag-llm-lab/output/evaluation.json) · [demo](projects/rag-llm-lab/output/demo.md).
 
-### Prompt Engineering Lab
-Laboratório de Engenharia de Prompt com experimentos versionados, comparação baseline vs. prompt estruturado, avaliação estrutural determinística, testes e CI.
+### Prompt Engineering
+Engenharia de Prompt com experimentos versionados, comparação baseline vs. prompt estruturado, avaliação estrutural determinística, testes e CI.
 **Projeto:** https://github.com/tsichero/prompt-engineering-lab
 
 ### Cloud AI Platform
