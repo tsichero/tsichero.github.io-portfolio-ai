@@ -12,7 +12,7 @@ Neste projeto, o recorte compara **Brasil e mundo**, calcula emissão per capita
 
 ## 2. Fonte de dados
 
-A fonte principal é o conjunto de dados de CO₂ disponibilizado pelo **Our World in Data**, baseado no Global Carbon Budget. A página de dados informa cobertura histórica até 2024 e identifica o Global Carbon Budget (2025) como fonte. cite não é usado dentro do arquivo; consulte a fonte abaixo.
+A fonte principal é o conjunto de dados de CO₂ disponibilizado pelo **Our World in Data**, baseado no Global Carbon Budget. A página de dados informa cobertura histórica até 2024 e identifica o Global Carbon Budget (2025) como fonte.
 
 - [Our World in Data — CO₂ emissions](https://ourworldindata.org/co2-emissions)
 - [Our World in Data — Brazil CO₂ profile](https://ourworldindata.org/profile/co2/brazil)
@@ -67,7 +67,6 @@ pytest -q
 - [Resumo dos indicadores](output/summary.json)
 - [Tabela do último ano](output/latest_indicators.csv)
 - [Gráfico SVG](output/co2_trend.svg)
-- [Gráfico PNG](output/co2_trend.png)
 - [Descrição dos artefatos](output/README.md)
 - [Testes](tests/test_analysis.py)
 
