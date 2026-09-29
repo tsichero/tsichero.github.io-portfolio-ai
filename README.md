@@ -36,6 +36,22 @@ Pipeline Python para leitura de planilhas, tratamento de dados, indicadores e ge
 Laboratório de experimentação com recuperação de contexto, avaliação de respostas, prompts e integração de modelos.
 **Evidências:** [avaliação](projects/rag-llm-lab/output/evaluation.json) · [demo](projects/rag-llm-lab/output/demo.md).
 
+### Prompt Engineering Lab
+Laboratório de Engenharia de Prompt com experimentos versionados, comparação baseline vs. prompt estruturado, avaliação estrutural determinística, testes e CI.
+**Projeto:** https://github.com/tsichero/prompt-engineering-lab
+
+### Cloud AI Platform
+Serviço cloud-native com FastAPI, Docker, readiness, request ID, observabilidade básica, testes e CI. O repositório não declara deploy cloud realizado.
+**Projeto:** https://github.com/tsichero/cloud-ai-platform
+
+### AI Project Engineering
+Projeto central de AI Engineering com retrieval determinístico, grounding, fontes e fallback seguro. A integração de LLM/RAG completo está no roadmap.
+**Projeto:** https://github.com/tsichero/ai-project-engineering
+
+### AI Agent Orchestration
+Workflow de agentes com roteamento determinístico e ferramenta de cálculo com escopo controlado por AST, além de testes e CI.
+**Projeto:** https://github.com/tsichero/ai-agent-orchestration
+
 ## 🧩 Como os projetos são estruturados
 
 **Problema → dados → arquitetura → implementação → avaliação → resultado**
