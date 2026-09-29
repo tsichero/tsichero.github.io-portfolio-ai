@@ -2,12 +2,17 @@ from pathlib import Path
 import json
 import pandas as pd
 import matplotlib.pyplot as plt
+import argparse
 
 DATA_URL = "https://raw.githubusercontent.com/owid/co2-data/master/owid-co2-data.csv"
 OUTPUT = Path("output")
+
+parser = argparse.ArgumentParser(description="Run CO2 analytics pipeline")
+parser.add_argument("--input", help="Optional local CSV for reproducible/offline execution")
+args = parser.parse_args()
 OUTPUT.mkdir(exist_ok=True)
 
-df = pd.read_csv(DATA_URL)
+df = pd.read_csv(args.input if args.input else DATA_URL)
 
 required = {"country", "year", "co2", "population"}
 missing = required - set(df.columns)
