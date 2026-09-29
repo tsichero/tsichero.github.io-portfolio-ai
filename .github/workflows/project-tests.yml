@@ -38,6 +38,11 @@ jobs:
         run: |
           printf "como RAG recupera contexto?\nsair\n" | python rag.py
 
+      - name: Test analytics
+        if: matrix.project == 'data-analytics-lab'
+        working-directory: projects/data-analytics-lab
+        run: pytest -q
+
       - name: Run analytics
         if: matrix.project == 'data-analytics-lab'
         working-directory: projects/data-analytics-lab
