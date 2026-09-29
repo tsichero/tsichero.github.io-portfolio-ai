@@ -1,6 +1,6 @@
-# RAG & LLM Lab
+# RAG & LLM Engineering
 
-Laboratório de Retrieval-Augmented Generation com arquitetura modular e foco em rastreabilidade.
+Projeto técnico de Retrieval-Augmented Generation com arquitetura modular e foco em rastreabilidade.
 
 ## Objetivo
 
