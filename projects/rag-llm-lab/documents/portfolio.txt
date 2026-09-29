@@ -1,0 +1,5 @@
+Este portfólio demonstra projetos de IA, Dados e desenvolvimento.
+As áreas principais incluem Python, SQL, FastAPI, APIs REST, LLMs, RAG,
+Machine Learning, Power BI, automação e cloud.
+A abordagem adotada é problema, dados, arquitetura, implementação,
+avaliação e resultado.
