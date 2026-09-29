@@ -23,7 +23,7 @@ def retrieve(query: str, top_k: int = 2):
 
 
 def main():
-    print("RAG Lab — digite 'sair' para encerrar.")
+    print("RAG Engineering — digite 'sair' para encerrar.")
     while True:
         query = input("\nPergunta: ").strip()
         if query.lower() == "sair":
