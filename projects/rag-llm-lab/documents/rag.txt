@@ -1,0 +1,6 @@
+Retrieval-Augmented Generation combina recuperação de informação
+com geração de linguagem. O sistema primeiro encontra trechos relevantes
+em uma coleção de documentos e depois fornece esses trechos como contexto
+para um modelo generativo.
+A qualidade depende de fatores como chunking, representação dos documentos,
+estratégia de busca, relevância dos resultados e avaliação.
