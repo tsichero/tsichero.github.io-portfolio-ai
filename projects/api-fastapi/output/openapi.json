@@ -1,0 +1,19 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Contacts API",
+    "version": "1.0.0",
+    "description": "CRUD API demonstrando FastAPI, validação e persistência."
+  },
+  "endpoints": [
+    "GET /health",
+    "POST /contacts",
+    "GET /contacts",
+    "GET /contacts/{contact_id}",
+    "PUT /contacts/{contact_id}",
+    "DELETE /contacts/{contact_id}"
+  ],
+  "validation": "Pydantic",
+  "persistence": "SQLite + SQLAlchemy",
+  "test_status": "PASS"
+}
