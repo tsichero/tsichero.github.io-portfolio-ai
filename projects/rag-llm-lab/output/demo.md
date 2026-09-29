@@ -1,4 +1,4 @@
-# RAG Lab — Evidence
+# RAG & LLM Engineering — Evidence
 
 ## Smoke test
 
