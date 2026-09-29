@@ -1,3 +1,5 @@
+from uuid import uuid4
+
 from fastapi.testclient import TestClient
 from app.main import app
 
@@ -11,8 +13,7 @@ def test_health():
 
 
 def test_create_and_list_contact():
-    email = "tatatest@example.com"
-    client.delete("/contacts/999999")
+    email = f"tatatest-{uuid4().hex}@example.com"
 
     response = client.post(
         "/contacts",
