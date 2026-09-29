@@ -1,49 +1,105 @@
 # Data Analytics Lab — CO₂ Emissions
 
-Projeto de análise de dados orientado a uma demanda real de Analytics: transformar uma base pública em indicadores reproduzíveis e conclusões documentadas.
+> **Portfolio project · Data Analytics · Python · Reproducibility**
 
-## Pergunta
+Projeto de análise de dados desenvolvido para demonstrar uma cadeia completa de Analytics: **fonte → validação → transformação → indicadores → visualização → evidência reproduzível**.
 
-Como a emissão de CO₂ do Brasil evoluiu ao longo do tempo e como ela se compara ao cenário global?
+## 1. Problema
 
-## Fonte
+Como transformar uma base pública de emissões em indicadores que possam ser auditados e reproduzidos por outra pessoa?
 
-Our World in Data — CO₂ dataset.
+Neste projeto, o recorte compara **Brasil e mundo**, calcula emissão per capita e registra indicadores do último ano disponível.
 
-O script usa a fonte pública por padrão e aceita `--input` para execução offline/reprodutível com fixture local.
+## 2. Fonte de dados
 
-## Pipeline
+A fonte principal é o conjunto de dados de CO₂ disponibilizado pelo **Our World in Data**, baseado no Global Carbon Budget. A página de dados informa cobertura histórica até 2024 e identifica o Global Carbon Budget (2025) como fonte. cite não é usado dentro do arquivo; consulte a fonte abaixo.
 
-1. Download da base
-2. Seleção de Brasil e mundo
-3. Tratamento e validação
-4. Cálculo de indicadores
-5. Exportação de dados para BI
-6. Geração de gráfico
-7. Registro das conclusões
+- [Our World in Data — CO₂ emissions](https://ourworldindata.org/co2-emissions)
+- [Our World in Data — Brazil CO₂ profile](https://ourworldindata.org/profile/co2/brazil)
 
-## Stack
+Para manter o CI determinístico, o repositório também contém uma pequena fixture local em `data/sample_co2.csv`. **Ela é apenas uma base de teste; não representa o dataset completo.**
 
-Python · Pandas · Matplotlib · Data Analysis
+## 3. Pipeline
 
-## Executar
+1. Carregamento da fonte pública ou fixture local.
+2. Validação das colunas obrigatórias.
+3. Conversão e validação dos tipos numéricos.
+4. Tratamento de valores ausentes.
+5. Validação de população positiva e CO₂ não negativo.
+6. Filtragem de Brasil e mundo.
+7. Cálculo de CO₂ per capita.
+8. Geração de indicadores e visualização.
+9. Exportação dos artefatos para auditoria.
+10. Testes automatizados.
+
+## 4. Stack
+
+- Python
+- Pandas
+- Matplotlib
+- Pytest
+- CSV / JSON
+- GitHub Actions
+
+## 5. Como executar
+
+### Execução com a fonte pública
 
 ```bash
 pip install -r requirements.txt
 python analysis.py
 ```
 
-Para execução determinística sem internet:
+### Execução determinística/offline
 
 ```bash
 python analysis.py --input data/sample_co2.csv
 ```
 
-## Evidências
+### Testes
+
+```bash
+pytest -q
+```
+
+## 6. Evidências
 
 - [Resumo dos indicadores](output/summary.json)
 - [Tabela do último ano](output/latest_indicators.csv)
-- [Gráfico reproduzível](output/co2_trend.svg)
+- [Gráfico SVG](output/co2_trend.svg)
+- [Gráfico PNG](output/co2_trend.png)
 - [Descrição dos artefatos](output/README.md)
+- [Testes](tests/test_analysis.py)
 
-A execução validada com o fixture local reproduz os indicadores de 2024 usados nos artefatos.
+## 7. Resultado da fixture
+
+A execução local reproduzível com a fixture contém 2023–2024 e produz:
+
+- Brasil, 2024: **483 Mt de CO₂**
+- Brasil, 2024: **2,29 t de CO₂ por pessoa**
+- Variação 2023→2024 na fixture: **+3,65%**
+
+Esses números são evidência da **fixture de teste**. Para interpretação do dado público atual, consulte a fonte original: a página do Our World in Data informa 483 milhões de toneladas e 2,28 t por pessoa para o Brasil em 2024.
+
+## 8. Decisões técnicas
+
+### Por que fixture local?
+
+O projeto precisa ser reproduzível mesmo quando uma pipeline de CI não tem acesso à internet. Por isso, o código aceita uma fonte externa, mas os testes usam uma fixture pequena e versionada.
+
+### Por que não colocar o dataset completo no repositório?
+
+Porque o projeto não precisa duplicar uma base pública inteira para demonstrar capacidade analítica. O código documenta a fonte e a fixture permite validar a lógica sem depender da rede.
+
+## 9. Próximas evoluções
+
+- adicionar análise histórica de longo prazo;
+- criar testes de qualidade de dados mais abrangentes;
+- incluir intervalos/flags para valores ausentes;
+- comparar CO₂ total, per capita e participação global;
+- criar uma camada de dashboard/BI;
+- versionar um relatório executivo gerado automaticamente.
+
+## 10. Competências demonstradas
+
+**Data Analytics · Python · Pandas · Data Quality · Data Transformation · KPI Design · Data Visualization · Reproducibility · Testing · GitHub Actions · Technical Documentation**
