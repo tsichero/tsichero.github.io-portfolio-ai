@@ -38,7 +38,7 @@ Projeto técnico com recuperação de contexto, avaliação de respostas, prompt
 
 ### Prompt Engineering
 Engenharia de Prompt com experimentos versionados, comparação baseline vs. prompt estruturado, avaliação estrutural determinística, testes e CI.
-**Projeto:** https://github.com/tsichero/prompt-engineering-lab
+**Projeto:** https://github.com/tsichero/prompt-engineering
 
 ### Cloud AI Platform
 Serviço cloud-native com FastAPI, Docker, readiness, request ID, observabilidade básica, testes e CI. O repositório não declara deploy cloud realizado.
