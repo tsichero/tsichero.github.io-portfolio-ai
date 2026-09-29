@@ -45,7 +45,7 @@ Serviço cloud-native com FastAPI, Docker, readiness, request ID, observabilidad
 **Projeto:** https://github.com/tsichero/cloud-ai-platform
 
 ### AI Project Engineering
-Projeto central de AI Engineering com retrieval determinístico, grounding, fontes e fallback seguro. A integração de LLM/RAG completo está no roadmap.
+Projeto central de AI Engineering com retrieval, grounding, fontes, fallback seguro e integração configurável com LLM. O modo demo é determinístico; a execução contra provedor externo depende de credenciais e configuração.
 **Projeto:** https://github.com/tsichero/ai-project-engineering
 
 ### AI Agent Orchestration
