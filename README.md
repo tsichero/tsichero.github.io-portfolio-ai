@@ -4,6 +4,8 @@
 
 Portfólio profissional focado em **evidência prática**: problemas reais, soluções técnicas, experimentação e evolução para aplicações de IA.
 
+[![Project tests](https://github.com/tsichero/tsichero.github.io-portfolio-ai/actions/workflows/project-tests.yml/badge.svg)](https://github.com/tsichero/tsichero.github.io-portfolio-ai/actions/workflows/project-tests.yml)
+
 ## 🎯 O que este portfólio demonstra
 
 - **AI Engineering:** IA Generativa, LLMs, RAG, NLP, Engenharia de Prompt e experimentação com agentes.
@@ -20,15 +22,19 @@ Projeto confidencial em desenvolvimento. Explora IA Generativa, LLMs, RAG, organ
 
 ### Data Analytics Lab
 Projeto técnico orientado a uma demanda típica de Dados: tratamento, exploração, indicadores, visualização e conclusões documentadas.
+**Evidências:** [indicadores](projects/data-analytics-lab/output/summary.json) · [tabela](projects/data-analytics-lab/output/latest_indicators.csv) · [gráfico](projects/data-analytics-lab/output/co2_trend.svg).
 
 ### REST API com FastAPI
 API de cadastro com banco de dados, validação, documentação e estrutura preparada para evolução e deploy.
+**Evidências:** [endpoints](projects/api-fastapi/output/openapi.json) · [teste funcional](projects/api-fastapi/output/evidence.md).
 
 ### Automação de Dados
 Pipeline Python para leitura de planilhas, tratamento de dados, indicadores e geração automatizada de relatório.
+**Evidências:** [relatório](projects/automation-data/output/report.html) · [por categoria](projects/automation-data/output/revenue_by_category.csv) · [por região](projects/automation-data/output/revenue_by_region.csv).
 
 ### RAG & LLM Experiments
 Laboratório de experimentação com recuperação de contexto, avaliação de respostas, prompts e integração de modelos.
+**Evidências:** [avaliação](projects/rag-llm-lab/output/evaluation.json) · [demo](projects/rag-llm-lab/output/demo.md).
 
 ## 🧩 Como os projetos são estruturados
 
