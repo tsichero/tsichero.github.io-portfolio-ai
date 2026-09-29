@@ -26,9 +26,9 @@ Documentação interativa:
 
 `http://127.0.0.1:8000/docs`
 
-## Decisões
+## Evidências
 
-- SQLite deixa o projeto simples e reproduzível localmente.
-- SQLAlchemy separa a camada de persistência da API.
-- Pydantic valida entrada e saída.
-- O endpoint `/health` facilita monitoramento e deploy posterior.
+- [Mapa dos endpoints e status de teste](output/openapi.json)
+- [Evidência funcional](output/evidence.md)
+
+A suíte validada cobre health check, criação, listagem e tratamento de recurso inexistente.
