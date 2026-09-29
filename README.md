@@ -1,165 +1,86 @@
-# Tainã Sichero Dulcetti — AI Systems Builder
+# Tainã Sichero Dulcetti — AI & Data Portfolio
 
-> I design and build AI systems that transform data into decisions, automation into leverage, and ideas into scalable products.
+> AI & Data Developer · Especialista em Inteligência Artificial · Médica Veterinária
 
----
+Portfólio profissional focado em **evidência prática**: problemas reais, soluções técnicas, experimentação e evolução para aplicações de IA.
 
-## ⚙️ About Me
+## 🎯 O que este portfólio demonstra
 
-I am a **Veterinarian, AI Specialist and Data Science professional** building solutions at the intersection of:
+- **AI Engineering:** IA Generativa, LLMs, RAG, NLP, Engenharia de Prompt e experimentação com agentes.
+- **Data:** Python, Pandas, SQL, análise de dados, Power BI e indicadores.
+- **Backend:** FastAPI, APIs REST, integração de serviços e persistência de dados.
+- **Automation:** Python, n8n e workflows orientados a processos.
+- **Cloud:** Azure, Docker e preparação de aplicações para deploy.
+- **Domain knowledge:** Medicina Veterinária aplicada à construção de soluções tecnológicas.
 
-* 🧠 Artificial Intelligence & Generative AI
-* 📊 Data Science & Analytics
-* ⚙️ Intelligent Automation
-* 🏢 Technology & Business
-* 🏥 Applied AI in Healthcare and real-world domains
+## 🚀 Projetos em destaque
 
-My work combines **domain knowledge, artificial intelligence, data and software development** to transform complex problems into practical systems.
+### IA aplicada à Medicina Veterinária
+Projeto confidencial em desenvolvimento. Explora IA Generativa, LLMs, RAG, organização de informações e aplicações de IA no contexto veterinário. Detalhes técnicos serão divulgados conforme houver segurança para publicação.
 
-I don't build isolated projects.
+### Data Analytics Lab
+Projeto técnico orientado a uma demanda típica de Dados: tratamento, exploração, indicadores, visualização e conclusões documentadas.
 
-**I design systems that think, automate, connect data and extend human decision-making.**
+### REST API com FastAPI
+API de cadastro com banco de dados, validação, documentação e estrutura preparada para evolução e deploy.
 
----
+### Automação de Dados
+Pipeline Python para leitura de planilhas, tratamento de dados, indicadores e geração automatizada de relatório.
 
-## 🚀 What I Build
+### RAG & LLM Experiments
+Laboratório de experimentação com recuperação de contexto, avaliação de respostas, prompts e integração de modelos.
 
-### 🧠 AI Systems
+## 🧩 Como os projetos são estruturados
 
-* Generative AI applications
-* LLM-powered systems
-* NLP applications
-* RAG and knowledge systems
-* Multimodal AI
-* Machine Learning and predictive models
+**Problema → dados → arquitetura → implementação → avaliação → resultado**
 
-### ⚙️ Intelligent Automation
+A proposta é evitar portfólio baseado apenas em listas de tecnologias. Cada projeto deve responder:
 
-* Python automation pipelines
-* AI-powered workflows
-* Email and communication automation
-* Process optimization
-* API-based integrations
-
-### 📊 Data Systems
-
-* Data analysis and predictive analytics
-* SQL and data modeling
-* Business intelligence
-* Decision-support dashboards
-* Data-driven systems
-
-### 🏥 Applied AI
-
-I am particularly interested in applying AI to **healthcare, veterinary medicine, business and other real-world domains**, combining technical systems with domain-specific knowledge.
-
----
-
-## 🧩 Selected Projects
-
-### 🤖 Applied AI Systems
-
-A collection of practical AI projects involving **Generative AI, NLP, computer vision, audio processing, machine learning and automation**.
-
-### 📚 RAG Knowledge Assistant
-
-An AI system designed to retrieve and work with information from documents using **embeddings and vector search**.
-
-### 📩 Intelligent Email Automation
-
-A Python-based automation system for email workflows, including **templates, scheduling and environment-based configuration**.
-
-### 📊 Business Intelligence
-
-Data-driven dashboards and analytical systems designed to transform information into **actionable insights for decision-making**.
-
----
-
-## 🧬 AI × Data × Domain Knowledge
-
-One of my main areas of interest is the intersection between:
-
-**Domain Expertise × Artificial Intelligence × Data × Business**
-
-My background in **Veterinary Medicine**, combined with my work in **Artificial Intelligence and Data Science**, allows me to approach technology not only from a technical perspective, but also from the perspective of the real-world problems these systems are designed to solve.
-
----
-
-## 🧠 Philosophy
-
-> **“I don't build apps. I design systems that extend human decision-making.”**
-
-Technology should not exist simply because it can be built.
-
-The goal is to create systems that are **useful, reliable, scalable and connected to real problems.**
-
----
-
-## 📡 Current Direction
-
-I am currently focused on developing deeper expertise in:
-
-* AI Agents and agentic workflows
-* Generative AI systems
-* RAG architectures
-* Intelligent automation
-* Applied Machine Learning
-* Data-driven products
-* APIs and AI integrations
-* Scalable AI solutions
-
-My long-term direction is the development of **applied AI systems and intelligent products capable of solving complex real-world problems.**
-
----
+1. Qual problema foi escolhido?
+2. Qual solução foi construída?
+3. Quais tecnologias foram utilizadas?
+4. Como a solução foi avaliada?
+5. O que poderia ser melhorado?
 
 ## 🛠️ Tech Stack
 
-**AI & Data**
+**AI & Data**  
+Python · Pandas · SQL · Machine Learning · Generative AI · LLMs · NLP · RAG · Predictive Analytics
 
-Python • Machine Learning • Generative AI • LLMs • NLP • RAG • Predictive Analytics • SQL
+**Development**  
+FastAPI · REST APIs · JavaScript · Git · GitHub
 
-**Development**
+**Data & Business**  
+Power BI · Data Analysis · Data Modeling · Dashboards
 
-APIs • FastAPI • JavaScript • React • Git • GitHub
+**Automation & Infrastructure**  
+n8n · Docker · Azure · Cloud Technologies
 
-**Data & Business**
+## 🧬 AI × Data × Domain Knowledge
 
-Data Analysis • Data Modeling • Business Intelligence • Dashboards
+Minha formação em Medicina Veterinária, combinada à especialização em Inteligência Artificial e à graduação em Ciência de Dados, permite conectar **conhecimento de domínio, tecnologia, Dados e visão de negócio** na construção de soluções.
 
-**Automation & Infrastructure**
+## 📚 Formação
 
-Workflow Automation • n8n • Docker • Cloud Technologies
+- MBA em Inteligência Artificial para Negócios — Faculdade Exame
+- Tecnologia em Ciências de Dados — UNINOVE, em andamento
+- Medicina Veterinária — FMU
+- Pós-graduação em Clínica Médica e Cirúrgica de Pequenos Animais — UNISA
 
----
+## 📌 Direção profissional
 
-## 🤝 Collaboration
+Interesse e atuação em oportunidades relacionadas a:
 
-Open to opportunities involving:
-
-* Applied AI
-* AI engineering and development
-* Generative AI
-* Data Science
-* Intelligent automation
-* AI consulting
-* Data-driven solutions
-* AI products and systems
-
----
-
-## 🧭 Professional Direction
-
-My goal is to work at the intersection of **Artificial Intelligence, Data, Technology and Business**, developing systems that move beyond experimentation and create practical value.
-
----
-
-## 🧠 Status
-
-> **Building systems. Not portfolios.**
+- AI Engineering
+- Generative AI
+- Data & AI Development
+- Data Science
+- Intelligent Automation
+- APIs e integrações de IA
+- AI Consulting
+- Produtos e sistemas baseados em IA
 
 ---
 
-### Let's build something useful.
-
-**Tainã Sichero Dulcetti**
-AI Systems Builder • AI Specialist • Data Science • Veterinarian
+**Tainã Sichero Dulcetti**  
+AI & Data Developer · AI Specialist · Médica Veterinária
