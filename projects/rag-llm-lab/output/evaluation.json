@@ -1,0 +1,9 @@
+{
+  "retrieval_method": "TF-IDF + cosine similarity",
+  "documents": 2,
+  "top_k": 2,
+  "test_query": "como RAG recupera contexto?",
+  "top_score": 0.568,
+  "status": "pass",
+  "next_step": "compare retrieval quality against embeddings/vector search before adding an LLM generation layer"
+}
