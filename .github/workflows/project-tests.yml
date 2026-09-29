@@ -41,7 +41,7 @@ jobs:
       - name: Test analytics
         if: matrix.project == 'data-analytics-lab'
         working-directory: projects/data-analytics-lab
-        run: pytest -q
+        run: PYTHONPATH=. python -m pytest -q
 
       - name: Run analytics
         if: matrix.project == 'data-analytics-lab'
