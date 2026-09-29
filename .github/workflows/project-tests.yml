@@ -1,0 +1,44 @@
+name: Portfolio project tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test-projects:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: [api-fastapi, automation-data, rag-llm-lab, data-analytics-lab]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        working-directory: projects/${{ matrix.project }}
+        run: pip install -r requirements.txt
+
+      - name: Test FastAPI
+        if: matrix.project == 'api-fastapi'
+        working-directory: projects/api-fastapi
+        run: pytest -q
+
+      - name: Run automation
+        if: matrix.project == 'automation-data'
+        working-directory: projects/automation-data
+        run: python generate_report.py
+
+      - name: Run RAG smoke test
+        if: matrix.project == 'rag-llm-lab'
+        working-directory: projects/rag-llm-lab
+        run: |
+          printf "como RAG recupera contexto?\nsair\n" | python rag.py
+
+      - name: Run analytics
+        if: matrix.project == 'data-analytics-lab'
+        working-directory: projects/data-analytics-lab
+        run: python analysis.py --input data/sample_co2.csv
