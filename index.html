@@ -1,1005 +1,508 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <!-- PORTFOLIO_PROJECTS_UPDATED_2026-09-30 -->
-  <meta charset="UTF-8">
-  <!-- pages-refresh-2026-09-30 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio de Tainã Sichero Dulcetti — Especialista em Inteligência Artificial, Dados e soluções de IA.">
-  <title>Tainã Sichero Dulcetti | AI & Data</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d18">
+  <meta name="description" content="Portfólio de Tainã Sichero Dulcetti — Médica Veterinária, especialista em Inteligência Artificial e desenvolvedora de soluções com IA, Dados e software.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tainã Sichero Dulcetti | AI & Data">
+  <meta property="og:description" content="Inteligência Artificial, Engenharia de Software e Ciência de Dados aplicadas a problemas reais.">
+  <meta property="og:image" content="profile.jpg">
+  <title>Tainã Sichero Dulcetti | AI Specialist &amp; Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
     :root {
-      --bg: #07111f;
-      --bg-secondary: #0b1728;
-      --card: rgba(15, 29, 48, 0.78);
-      --border: rgba(148, 163, 184, 0.16);
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-      --accent-secondary: #818cf8;
-      --max-width: 1180px;
+      color-scheme: dark;
+      --bg: #080d18;
+      --bg-soft: #0d1524;
+      --panel: rgba(17, 27, 45, .78);
+      --panel-strong: #111d30;
+      --line: rgba(159, 180, 209, .15);
+      --text: #f3f6fc;
+      --muted: #a2aec1;
+      --subtle: #74839b;
+      --cyan: #66e3f2;
+      --blue: #75a7ff;
+      --violet: #a78bfa;
+      --max: 1160px;
+      --radius: 22px;
+      --shadow: 0 24px 80px rgba(0,0,0,.28);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
     body {
-      font-family: "Segoe UI", Inter, Arial, sans-serif;
+      margin: 0;
+      min-width: 320px;
       background:
-        radial-gradient(circle at 80% 10%, rgba(56, 189, 248, 0.10), transparent 30%),
-        radial-gradient(circle at 10% 30%, rgba(129, 140, 248, 0.08), transparent 28%),
+        radial-gradient(ellipse at 82% 2%, rgba(81, 125, 255, .15), transparent 34rem),
+        radial-gradient(ellipse at 5% 28%, rgba(58, 213, 225, .08), transparent 30rem),
         var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      font-family: "DM Sans", Inter, system-ui, sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: .18;
+      background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: linear-gradient(to bottom, black, transparent 75%);
     }
-
-    .container {
-      width: min(100% - 40px, var(--max-width));
-      margin: 0 auto;
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+    img { display: block; max-width: 100%; }
+    .container { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+    .section { padding: 104px 0; }
+    .section-kicker {
+      display: inline-flex; align-items: center; gap: 10px;
+      color: var(--cyan); font-size: .76rem; font-weight: 700;
+      letter-spacing: .17em; text-transform: uppercase;
     }
+    .section-kicker::before { content: ""; width: 22px; height: 1px; background: var(--cyan); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: "Space Grotesk", "DM Sans", sans-serif; line-height: 1.12; }
+    .section-heading { max-width: 760px; margin: 15px 0 18px; font-size: clamp(2rem, 4.3vw, 3.35rem); letter-spacing: -.045em; }
+    .section-lead { max-width: 720px; color: var(--muted); font-size: 1.04rem; }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(7, 17, 31, 0.82);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      border-bottom: 1px solid var(--line);
+      background: rgba(8, 13, 24, .82);
+      backdrop-filter: blur(18px);
     }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { font: 700 1.25rem "Space Grotesk", sans-serif; letter-spacing: -.04em; }
+    .brand span { color: var(--cyan); }
+    .nav-links { display: flex; align-items: center; gap: 30px; padding: 0; margin: 0; list-style: none; color: var(--muted); font-size: .9rem; }
+    .nav-links a { transition: color .2s ease; }
+    .nav-links a:hover { color: var(--cyan); }
+    .nav-cta { padding: 10px 16px; border: 1px solid rgba(102,227,242,.34); border-radius: 999px; color: var(--cyan); font-size: .88rem; font-weight: 700; }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: var(--panel); color: var(--text); border-radius: 12px; width: 44px; height: 44px; font-size: 1.1rem; cursor: pointer; }
 
-    nav {
-      min-height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+    .hero { min-height: 690px; display: grid; align-items: center; padding: 92px 0 86px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); align-items: center; gap: 76px; }
+    .availability { display: inline-flex; align-items: center; gap: 9px; padding: 7px 13px; border: 1px solid var(--line); border-radius: 999px; color: #c2d0e3; background: rgba(17, 29, 48, .6); font-size: .78rem; letter-spacing: .04em; margin-bottom: 26px; }
+    .availability::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #70e5bd; box-shadow: 0 0 14px rgba(112,229,189,.7); }
+    .hero h1 { max-width: 820px; margin-bottom: 20px; font-size: clamp(3rem, 7.1vw, 5.9rem); letter-spacing: -.075em; }
+    .hero h1 .gradient { color: transparent; background: linear-gradient(100deg, var(--cyan), #8bb8ff 55%, #b49aff); background-clip: text; -webkit-background-clip: text; }
+    .hero-role { color: #d2dced; font-size: clamp(1.05rem, 2.2vw, 1.35rem); font-weight: 600; margin-bottom: 20px; }
+    .hero-copy { max-width: 710px; color: var(--muted); font-size: 1.08rem; line-height: 1.85; margin-bottom: 28px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 12px 19px; border: 1px solid var(--line); border-radius: 12px; background: rgba(18, 30, 49, .72); color: var(--text); font-weight: 700; font-size: .9rem; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+    .button:hover { transform: translateY(-3px); border-color: rgba(102,227,242,.48); }
+    .button-primary { color: #07121b; border-color: transparent; background: linear-gradient(110deg, var(--cyan), #9ab8ff); box-shadow: 0 10px 30px rgba(80, 194, 220, .16); }
+    .button-primary:hover { background: linear-gradient(110deg, #8bf0f8, #b3caff); }
+    .hero-visual { position: relative; display: grid; place-items: center; min-height: 360px; }
+    .orbit { position: absolute; width: 330px; aspect-ratio: 1; border: 1px solid rgba(126, 165, 235, .19); border-radius: 50%; box-shadow: 0 0 70px rgba(85, 147, 255, .08), inset 0 0 60px rgba(85, 147, 255, .05); }
+    .orbit::before, .orbit::after { content: ""; position: absolute; border: 1px solid rgba(102,227,242,.16); border-radius: 50%; inset: 25px; }
+    .orbit::after { inset: 54px; border-color: rgba(167,139,250,.18); }
+    .portrait-wrap { position: relative; width: 238px; aspect-ratio: 1; padding: 8px; border-radius: 50%; background: linear-gradient(145deg, var(--cyan), var(--violet)); box-shadow: 0 22px 80px rgba(75, 143, 220, .24); }
+    .portrait-wrap img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid var(--bg); }
+    .floating-chip { position: absolute; z-index: 2; display: flex; align-items: center; gap: 9px; padding: 10px 13px; border: 1px solid var(--line); border-radius: 13px; background: rgba(13, 23, 39, .92); box-shadow: var(--shadow); color: #d9e4f3; font-size: .78rem; font-weight: 700; backdrop-filter: blur(12px); }
+    .floating-chip i { color: var(--cyan); }
+    .chip-one { top: 26px; right: -2px; }
+    .chip-two { bottom: 28px; left: -18px; }
+    .hero-footnote { margin-top: 52px; display: flex; flex-wrap: wrap; gap: 22px; color: var(--subtle); font-size: .78rem; letter-spacing: .03em; }
+    .hero-footnote span { display: inline-flex; align-items: center; gap: 8px; }
+    .hero-footnote i { color: var(--cyan); }
+
+    .surface { border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(145deg, rgba(18,30,49,.82), rgba(11,19,33,.82)); box-shadow: var(--shadow); }
+    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: stretch; margin-top: 42px; }
+    .about-copy { padding: 34px; }
+    .about-copy p { color: var(--muted); margin-bottom: 18px; }
+    .about-copy p:last-child { margin-bottom: 0; }
+    .principle { padding: 34px; display: flex; flex-direction: column; justify-content: space-between; background: radial-gradient(circle at 100% 0%, rgba(102,227,242,.1), transparent 55%), var(--panel); }
+    .principle-mark { color: var(--cyan); font-size: 2rem; }
+    .principle blockquote { margin: 22px 0; font: 600 clamp(1.2rem, 2vw, 1.65rem)/1.45 "Space Grotesk", sans-serif; letter-spacing: -.025em; }
+    .principle p { color: var(--muted); font-size: .9rem; margin-bottom: 0; }
+
+    .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 42px; }
+    .method-card { padding: 27px; border: 1px solid var(--line); border-radius: 18px; background: rgba(15,25,42,.72); }
+    .method-number { color: var(--cyan); font: 700 .82rem "Space Grotesk", sans-serif; letter-spacing: .1em; }
+    .method-card h3 { margin: 19px 0 10px; font-size: 1.22rem; }
+    .method-card p { color: var(--muted); font-size: .92rem; margin-bottom: 0; }
+
+    .projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 42px; }
+    .project-card { position: relative; display: flex; flex-direction: column; min-height: 315px; padding: 28px; border: 1px solid var(--line); border-radius: 20px; background: linear-gradient(145deg, rgba(18,30,49,.88), rgba(10,18,31,.92)); transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease; overflow: hidden; }
+    .project-card::before { content: ""; position: absolute; width: 180px; height: 180px; top: -115px; right: -80px; border-radius: 50%; background: rgba(102,227,242,.1); filter: blur(5px); transition: transform .3s ease; }
+    .project-card:hover { transform: translateY(-5px); border-color: rgba(102,227,242,.38); box-shadow: 0 22px 55px rgba(0,0,0,.24); }
+    .project-card:hover::before { transform: scale(1.5); }
+    .project-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 20px; }
+    .project-type { color: var(--cyan); font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .project-icon { width: 42px; height: 42px; display: grid; place-items: center; flex: 0 0 auto; border: 1px solid rgba(102,227,242,.2); border-radius: 13px; color: var(--cyan); background: rgba(102,227,242,.07); }
+    .project-card h3 { margin-bottom: 12px; font-size: 1.35rem; }
+    .project-card p { color: var(--muted); font-size: .94rem; margin-bottom: 20px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; margin-bottom: 22px; }
+    .tag { padding: 5px 9px; border: 1px solid rgba(159,180,209,.13); border-radius: 999px; color: #c0ccdc; background: rgba(148,163,184,.055); font-size: .72rem; }
+    .project-link { display: inline-flex; align-items: center; gap: 9px; width: fit-content; color: var(--cyan); font-size: .88rem; font-weight: 700; }
+    .project-link i { transition: transform .2s ease; }
+    .project-link:hover i { transform: translateX(4px); }
+    .project-note { color: var(--subtle); font-size: .82rem; margin-top: 22px; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 42px; }
+    .skill-card { display: flex; gap: 18px; padding: 24px; border: 1px solid var(--line); border-radius: 17px; background: rgba(15,25,42,.68); }
+    .skill-icon { display: grid; place-items: center; flex: 0 0 44px; height: 44px; border-radius: 13px; color: var(--cyan); background: rgba(102,227,242,.08); }
+    .skill-card h3 { margin: 1px 0 8px; font-size: 1.05rem; }
+    .skill-card p { color: var(--muted); font-size: .9rem; margin: 0; }
+
+    .experience-list { display: grid; gap: 16px; margin-top: 42px; }
+    .experience-item { display: grid; grid-template-columns: 220px 1fr; gap: 30px; padding: 27px 30px; border: 1px solid var(--line); border-radius: 18px; background: rgba(15,25,42,.66); }
+    .experience-label { color: var(--cyan); font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .experience-item h3 { margin-bottom: 8px; font-size: 1.15rem; }
+    .experience-item p { color: var(--muted); font-size: .92rem; margin: 0; }
+
+    .education-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 42px; }
+    .education-card { padding: 25px; border: 1px solid var(--line); border-radius: 17px; background: rgba(15,25,42,.68); }
+    .education-card .status { display: inline-block; margin-bottom: 13px; color: var(--cyan); font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .education-card h3 { margin-bottom: 8px; font-size: 1.08rem; }
+    .education-card p { margin: 0; color: var(--muted); font-size: .88rem; }
+
+    .contact-panel { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 34px; padding: 42px; border: 1px solid rgba(102,227,242,.22); border-radius: 24px; background: radial-gradient(circle at 95% 0%, rgba(167,139,250,.13), transparent 34%), linear-gradient(115deg, rgba(20,40,58,.95), rgba(13,22,39,.95)); overflow: hidden; }
+    .contact-panel h2 { margin: 13px 0 12px; font-size: clamp(1.8rem, 3.8vw, 2.7rem); letter-spacing: -.045em; }
+    .contact-panel p { max-width: 600px; margin: 0; color: var(--muted); }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 10px; flex: 0 0 auto; }
+    footer { padding: 30px 0; border-top: 1px solid var(--line); color: var(--subtle); font-size: .82rem; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a:hover { color: var(--cyan); }
+
+    @media (max-width: 900px) {
+      .hero-grid { gap: 34px; grid-template-columns: minmax(0, 1.1fr) minmax(220px, .7fr); }
+      .orbit { width: 280px; }
+      .portrait-wrap { width: 205px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .experience-item { grid-template-columns: 170px 1fr; }
+      .contact-panel { align-items: flex-start; flex-direction: column; }
     }
-
-    .logo {
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
+    @media (max-width: 720px) {
+      .container { width: min(var(--max), calc(100% - 34px)); }
+      .section { padding: 76px 0; }
+      .menu-toggle { display: inline-grid; place-items: center; }
+      .nav-cta { display: none; }
+      .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 18px 24px 24px; flex-direction: column; align-items: stretch; gap: 0; border-bottom: 1px solid var(--line); background: rgba(8,13,24,.97); }
+      .nav-links.is-open { display: flex; }
+      .nav-links a { display: block; padding: 12px 4px; }
+      .hero { min-height: auto; padding: 72px 0 60px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-visual { grid-row: 1; min-height: 280px; }
+      .orbit { width: 260px; }
+      .portrait-wrap { width: 190px; }
+      .hero-content { grid-row: 2; }
+      .hero-footnote { margin-top: 34px; gap: 12px 18px; }
+      .method-grid { grid-template-columns: 1fr; }
+      .projects-grid, .skills-grid, .education-grid { grid-template-columns: 1fr; }
+      .experience-item { grid-template-columns: 1fr; gap: 10px; padding: 23px; }
+      .contact-panel { padding: 29px; }
     }
-
-    .logo span {
-      color: var(--accent);
+    @media (max-width: 420px) {
+      .container { width: min(var(--max), calc(100% - 28px)); }
+      .hero h1 { font-size: 2.85rem; }
+      .hero-visual { min-height: 245px; }
+      .orbit { width: 225px; }
+      .portrait-wrap { width: 165px; }
+      .floating-chip { font-size: .68rem; padding: 8px 10px; }
+      .chip-one { right: -2px; top: 12px; }
+      .chip-two { left: -5px; bottom: 12px; }
+      .about-copy, .principle { padding: 25px; }
+      .project-card { padding: 23px; }
+      .contact-actions { width: 100%; }
+      .contact-actions .button { flex: 1 1 100%; }
     }
-
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-
-    .hero {
-      min-height: 82vh;
-      display: flex;
-      align-items: center;
-      padding: 100px 0 80px;
-    }
-
-    .hero-content {
-      max-width: 850px;
-    }
-
-    .hero-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 300px;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .profile-photo {
-      width: 260px;
-      height: 260px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 2px solid rgba(56, 189, 248, 0.35);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-      justify-self: center;
-    }
-
-    @media (max-width: 800px) {
-      .hero-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .profile-photo {
-        width: 220px;
-        height: 220px;
-        order: -1;
-      }
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      padding: 7px 13px;
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      border-radius: 999px;
-      color: var(--accent);
-      background: rgba(56, 189, 248, 0.06);
-      font-size: 0.82rem;
-      margin-bottom: 24px;
-    }
-
-    h1 {
-      font-size: clamp(2.8rem, 7vw, 5.7rem);
-      line-height: 0.98;
-      letter-spacing: -0.055em;
-      margin-bottom: 26px;
-    }
-
-    .hero-title {
-      font-size: clamp(1.2rem, 2.4vw, 1.7rem);
-      color: #cbd5e1;
-      margin-bottom: 20px;
-    }
-
-    .hero-title strong {
-      color: var(--accent);
-    }
-
-    .hero-description {
-      max-width: 760px;
-      color: var(--muted);
-      font-size: 1.08rem;
-      line-height: 1.8;
-      margin-bottom: 34px;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .hero .buttons {
-      margin-top: 22px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 20px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: rgba(15, 29, 48, 0.75);
-      font-weight: 600;
-      transition: 0.2s ease;
-    }
-
-    .button.primary {
-      background: var(--accent);
-      color: #04111d;
-      border-color: var(--accent);
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
-    section {
-      padding: 90px 0;
-    }
-
-    .section-label {
-      color: var(--accent);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: -0.035em;
-      margin-bottom: 18px;
-    }
-
-    .section-intro {
-      color: var(--muted);
-      max-width: 760px;
-      margin-bottom: 42px;
-    }
-
-    .about {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 60px;
-      align-items: start;
-    }
-
-    .about-text p {
-      color: #cbd5e1;
-      margin-bottom: 18px;
-    }
-
-    .highlight {
-      border-left: 2px solid var(--accent);
-      padding: 8px 0 8px 22px;
-      color: #e2e8f0;
-      font-size: 1.05rem;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px;
-      backdrop-filter: blur(10px);
-      transition: 0.25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(56, 189, 248, 0.35);
-    }
-
-    .card.featured {
-      grid-column: span 2;
-      border-color: rgba(129, 140, 248, 0.3);
-      background:
-        linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(129, 140, 248, 0.07)),
-        var(--card);
-    }
-
-    .card-label {
-      color: var(--accent);
-      font-size: 0.76rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .card h3 {
-      font-size: 1.35rem;
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .hero-tags {
-      margin-bottom: 34px;
-    }
-
-    .hero .buttons {
-      margin-top: 0;
-    }
-
-    .tag {
-      padding: 5px 10px;
-      border-radius: 999px;
-      background: rgba(148, 163, 184, 0.08);
-      border: 1px solid var(--border);
-      color: #cbd5e1;
-      font-size: 0.78rem;
-    }
-
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .skill-group h3 {
-      font-size: 1rem;
-      margin-bottom: 12px;
-    }
-
-    .skill-group p {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 18px;
-    }
-
-    .timeline-item {
-      padding: 24px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: rgba(15, 29, 48, 0.55);
-    }
-
-    .timeline-item h3 {
-      margin-bottom: 5px;
-    }
-
-    .timeline-item .period {
-      color: var(--accent);
-      font-size: 0.82rem;
-      margin-bottom: 12px;
-    }
-
-    .timeline-item p {
-      color: var(--muted);
-    }
-
-    .education-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    footer {
-      padding: 40px 0;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-    }
-
-    .footer-links a:hover {
-      color: var(--accent);
-    }
-
-    @media (max-width: 800px) {
-      .nav-links {
-        display: none;
-      }
-
-      .about,
-      .cards,
-      .education-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .card.featured {
-        grid-column: span 1;
-      }
-
-      .skills {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 80px 0;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .container {
-        width: min(100% - 28px, var(--max-width));
-      }
-
-      section {
-        padding: 65px 0;
-      }
-
-      .skills {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 3rem;
-      }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
     }
   </style>
 </head>
-
 <body>
-
-  <header>
-    <div class="container">
-      <nav>
-        <a href="#" class="logo">Tainã<span>.</span></a>
-
-        <ul class="nav-links">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Página inicial">TAINÃ<span>.</span></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+      <nav aria-label="Navegação principal">
+        <ul class="nav-links" id="primary-navigation">
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#projetos">Projetos</a></li>
           <li><a href="#competencias">Competências</a></li>
-          <li><a href="#experiencia">Experiência</a></li>
+          <li><a href="#trajetoria">Trajetória</a></li>
           <li><a href="#formacao">Formação</a></li>
         </ul>
       </nav>
+      <a class="nav-cta" href="#contato">Vamos conversar <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
     </div>
   </header>
 
   <main>
-
-    <section class="hero">
-      <div class="container">
-        <div class="hero-layout">
-          <div class="hero-content">
-
-          <div class="eyebrow">AI & Data Developer · Especialista em IA</div>
-
-          <h1>Tainã Sichero Dulcetti</h1>
-
-          <p class="hero-title">
-            <strong>AI Specialist | AI & Data Developer | Generative & AI Agents | Data Science | Machine Learning | Automation | Médica Veterinária</strong>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="availability">AI SPECIALIST · AI &amp; DATA DEVELOPER</div>
+          <h1>Tainã Sichero <span class="gradient">Dulcetti</span></h1>
+          <p class="hero-role">Inteligência Artificial, Dados e desenvolvimento de soluções.</p>
+          <p class="hero-copy">
+            Sou Médica Veterinária, especialista em Inteligência Artificial e estudante de Ciência de Dados.
+            Desenvolvo e experimento soluções que conectam IA, automação e software a problemas reais —
+            com atenção ao contexto, à qualidade da informação e à validação técnica.
           </p>
-
-          <p class="hero-description">
-            Desenvolvo soluções orientadas a problemas reais, combinando <strong>Inteligência Artificial, Dados e desenvolvimento de software</strong> em um processo que envolve estruturação, implementação, experimentação e validação.
-          </p>
-
-          <div class="tags hero-tags">
-            <span class="tag">Python</span>
-            <span class="tag">SQL</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">LLMs</span>
-            <span class="tag">RAG</span>
-            <span class="tag">Machine Learning</span>
-            <span class="tag">Power BI</span>
-            <span class="tag">Azure</span>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projetos">Explorar projetos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <a class="button" href="https://github.com/tsichero" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+            <a class="button" href="https://www.linkedin.com/in/tain%C3%A3-sichero-dulcetti-65270b149/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
           </div>
-
-          <div class="buttons">
-            <a class="button primary" href="#projetos">Conhecer projetos</a>
-            <a class="button" href="https://github.com/tsichero" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a class="button" href="mailto:mmbjjs@gmail.com">E-mail</a>
-            <a class="button" href="https://wa.me/5511988419090?text=Ol%C3%A1%2C%20Tain%C3%A3!%20Encontrei%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20com%20voc%C3%AA%20sobre%20seus%20projetos%2C%20experi%C3%AAncia%20e%20atua%C3%A7%C3%A3o%20em%20Intelig%C3%AAncia%20Artificial%20e%20Dados.%20Meu%20contato%20%C3%A9%20referente%20ao%20seu%20portf%C3%B3lio%20e%20a%20uma%20poss%C3%ADvel%20oportunidade%20ou%20parceria%20profissional." target="_blank" rel="noopener noreferrer">Falar sobre oportunidades</a>
-            <a class="button" href="https://www.linkedin.com/in/tain%C3%A3-sichero-dulcetti-65270b149/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <div class="hero-footnote">
+            <span><i class="fa-solid fa-code" aria-hidden="true"></i> AI Engineering</span>
+            <span><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Data &amp; Analytics</span>
+            <span><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Conhecimento de domínio</span>
           </div>
-
+        </div>
+        <div class="hero-visual" aria-label="Foto de perfil de Tainã">
+          <div class="orbit" aria-hidden="true"></div>
+          <div class="portrait-wrap">
+            <img src="profile.jpg" alt="Foto de perfil de Tainã Sichero Dulcetti" width="600" height="600">
           </div>
-
-          <img
-            class="profile-photo"
-            src="profile.jpg?v=20260929"
-            alt="Tainã Sichero Dulcetti"
-          >
-
+          <div class="floating-chip chip-one"><i class="fa-solid fa-brain" aria-hidden="true"></i> Generative AI</div>
+          <div class="floating-chip chip-two"><i class="fa-solid fa-database" aria-hidden="true"></i> Data + Software</div>
         </div>
       </div>
     </section>
 
-    <section id="sobre">
+    <section class="section" id="sobre">
       <div class="container">
-
-        <div class="section-label">01 · Posicionamento</div>
-        <h2 class="section-title">Problema → solução → evidência</h2>
-
-        <div class="about">
-
-          <div class="about-text">
+        <span class="section-kicker">01 / Sobre</span>
+        <h2 class="section-heading">Tecnologia com contexto. Desenvolvimento com propósito.</h2>
+        <p class="section-lead">Uma trajetória multidisciplinar que conecta conhecimento técnico, visão de negócio e experiência em um domínio especializado.</p>
+        <div class="about-grid">
+          <div class="surface about-copy">
             <p>
-              Sou <strong>Médica Veterinária</strong>, especialista em Inteligência Artificial
-              e estudante de Ciência de Dados. Minha trajetória combina conhecimento de domínio,
-              tecnologia e desenvolvimento para construir soluções que conectam
-              <strong>IA, Dados e necessidades reais</strong>.
+              Minha formação em Medicina Veterinária, somada ao MBA em Inteligência Artificial para Negócios
+              e à graduação em Ciência de Dados, amplia minha forma de analisar problemas e pensar soluções.
+              Essa combinação me permite considerar não apenas a implementação, mas também o contexto de uso,
+              os riscos, a qualidade das informações e a responsabilidade envolvida.
             </p>
-
             <p>
-              Minha atuação envolve <strong>IA Generativa, LLMs, RAG, Engenharia de Prompt,
-              Machine Learning, análise de dados, Python, SQL, FastAPI, APIs, automação e
-              Cloud</strong>. Desenvolvo e experimento diferentes abordagens para estruturar
-              problemas, transformar dados em informação útil e criar aplicações que possam
-              ser avaliadas de forma prática.
+              Tenho interesse e atuação em IA Generativa, LLMs, RAG, Engenharia de Prompt, agentes,
+              Machine Learning, análise de dados, Python, SQL, APIs e automação. Nos projetos, busco
+              documentar decisões, testar comportamentos e tornar os resultados verificáveis.
             </p>
-
             <p>
-              Neste portfólio, meu objetivo é mostrar mais do que as tecnologias que estudo:
-              quero apresentar <strong>o que consigo construir com elas</strong>. Aqui estão
-              aplicações, APIs, pipelines, análises, automações e experimentos de IA que
-              demonstram diferentes etapas do desenvolvimento de uma solução, da ideia à
-              implementação e validação.
+              Este portfólio reúne projetos técnicos, experimentos e aplicações que demonstram meu processo
+              de aprendizagem e desenvolvimento. Cada iniciativa deve ser entendida pelo que efetivamente
+              entrega — sem confundir protótipo, experimento e produto em produção.
             </p>
           </div>
-
-          <div class="highlight">
-            <strong>Como eu penso um projeto:</strong><br><br>
-            Problema real → dados → arquitetura → implementação → avaliação → resultado.
-            <br><br>
-            O objetivo é transformar conhecimento técnico em <strong>evidência prática</strong>,
-            mostrando não apenas a solução final, mas também o raciocínio, as escolhas técnicas
-            e os aprendizados ao longo do desenvolvimento.
-          </div>
-
+          <aside class="surface principle">
+            <div>
+              <div class="principle-mark"><i class="fa-solid fa-crosshairs" aria-hidden="true"></i></div>
+              <blockquote>“Não basta conhecer a tecnologia. É preciso saber por que, onde e como aplicá-la.”</blockquote>
+            </div>
+            <p>Meu critério: utilidade, clareza, segurança e evidência prática.</p>
+          </aside>
         </div>
       </div>
     </section>
 
-    <section id="projetos">
+    <section class="section" id="metodo">
       <div class="container">
-
-        <div class="section-label">02 · Projetos</div>
-        <h2 class="section-title">Projetos selecionados</h2>
-
-        <p class="section-intro">
-          Projetos e experimentos que demonstram minha atuação prática em Inteligência
-          Artificial, Dados, desenvolvimento de aplicações e automação.
-        </p>
-
-        <div class="cards">
-
-          <article class="card featured">
-            <div class="card-label">Projeto confidencial · Em desenvolvimento</div>
-            <h3>IA aplicada à Medicina Veterinária</h3>
-            <p>
-              Projeto confidencial em desenvolvimento que explora Inteligência Artificial
-              aplicada ao contexto veterinário, com foco em LLMs, RAG, organização de
-              informações e aplicações de IA. O projeto será apresentado publicamente
-              quando houver segurança para divulgação.
-            </p>
-            <div class="tags">
-              <span class="tag">Generative AI</span>
-              <span class="tag">LLMs</span>
-              <span class="tag">RAG</span>
-              <span class="tag">Python</span>
-              <span class="tag">FastAPI</span>
-              <span class="tag">APIs</span>
-            </div>
+        <span class="section-kicker">02 / Abordagem</span>
+        <h2 class="section-heading">Do problema à evidência.</h2>
+        <p class="section-lead">Uma forma estruturada de transformar necessidades em soluções que possam ser compreendidas, testadas e aprimoradas.</p>
+        <div class="method-grid">
+          <article class="method-card">
+            <span class="method-number">ETAPA 01</span>
+            <h3>Entender o contexto</h3>
+            <p>Delimitar o problema, identificar usuários, dados disponíveis, restrições e critérios de sucesso.</p>
           </article>
-
-          <article class="card">
-            <div class="card-label">Projeto técnico · Validado</div>
-            <h3>Data Analytics Engineering</h3>
-            <a href="https://github.com/tsichero/data-analytics-engineering">Ver projeto →</a>
-            <a href="projects/data-analytics-lab/output/co2_trend.svg">Ver evidência →</a>
-            <p>
-              Projeto orientado a uma demanda típica de vagas de Dados: tratamento,
-              exploração e análise de uma base pública, com indicadores, visualização
-              e conclusões documentadas.
-            </p>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">Pandas</span>
-              <span class="tag">SQL</span>
-              <span class="tag">Power BI</span>
-            </div>
+          <article class="method-card">
+            <span class="method-number">ETAPA 02</span>
+            <h3>Construir a solução</h3>
+            <p>Escolher a abordagem técnica, estruturar componentes, integrar ferramentas e implementar com documentação.</p>
           </article>
-
-          <article class="card">
-            <div class="card-label">Projeto técnico · Validado</div>
-            <h3>REST API com FastAPI</h3>
-            <a href="https://github.com/tsichero/fastapi-backend-api">Ver projeto →</a>
-            <a href="projects/api-fastapi/output/evidence.md">Ver evidência →</a>
-            <p>
-              API de cadastro com persistência em banco de dados, validação,
-              documentação dos endpoints e estrutura preparada para deploy.
-            </p>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">FastAPI</span>
-              <span class="tag">REST</span>
-              <span class="tag">SQL</span>
-            </div>
+          <article class="method-card">
+            <span class="method-number">ETAPA 03</span>
+            <h3>Avaliar e evoluir</h3>
+            <p>Testar, analisar resultados, identificar limitações e registrar evidências para orientar melhorias.</p>
           </article>
+        </div>
+      </div>
+    </section>
 
-          <article class="card">
-            <div class="card-label">Projeto técnico · Validado</div>
-            <h3>Automação de Dados</h3>
-            <a href="https://github.com/tsichero/data-automation">Ver projeto →</a>
-            <a href="projects/automation-data/output/report.html">Ver relatório →</a>
-            <p>
-              Pipeline em Python para leitura de planilhas, tratamento dos dados,
-              geração de indicadores e produção automatizada de relatório.
-            </p>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">Pandas</span>
-              <span class="tag">Automation</span>
-              <span class="tag">Excel</span>
-            </div>
-          </article>
+    <section class="section" id="projetos">
+      <div class="container">
+        <span class="section-kicker">03 / Projetos</span>
+        <h2 class="section-heading">Projetos selecionados.</h2>
+        <p class="section-lead">Uma seleção de iniciativas em Engenharia de IA, LLMs, agentes, desenvolvimento de APIs e Dados. Os repositórios apresentam código, documentação e evidências disponíveis.</p>
 
-          <article class="card">
-            <div class="card-label">AI Engineering · Validado</div>
-            <h3>RAG & LLM Engineering</h3>
-            <a href="https://github.com/tsichero/rag-llm-engineering">Ver projeto →</a>
-            <a href="projects/rag-llm-lab/output/demo.md">Ver evidência →</a>
-            <p>
-              Projeto técnico com LLMs, recuperação de contexto,
-              avaliação de respostas, Engenharia de Prompt e integração de modelos.
-            </p>
-            <div class="tags">
-              <span class="tag">LLMs</span>
-              <span class="tag">RAG</span>
-              <span class="tag">Prompt Engineering</span>
-              <span class="tag">Evaluation</span>
-            </div>
-          </article>
-
-
-          <article class="card">
-            <div class="card-label">Prompt Engineering · Implementado</div>
-            <h3>Prompt Engineering</h3>
-            <a href="https://github.com/tsichero/prompt-engineering" target="_blank" rel="noopener noreferrer">Ver projeto →</a>
-            <p>
-              Laboratório de avaliação sistemática de prompts, com baseline,
-              prompts estruturados, critérios ponderados, testes de reprodutibilidade
-              e pipeline automatizado de avaliação estrutural.
-            </p>
-            <div class="tags">
-              <span class="tag">Prompt Engineering</span>
-              <span class="tag">Evaluation</span>
-              <span class="tag">Python</span>
-              <span class="tag">Pytest</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-label">Cloud · Implementado</div>
-            <h3>Cloud AI Platform</h3>
-            <a href="https://github.com/tsichero/cloud-ai-platform" target="_blank" rel="noopener noreferrer">Ver projeto →</a>
-            <p>
-              Serviço de IA preparado para Cloud com FastAPI, Docker, configuração
-              por ambiente, readiness, request ID, logs e testes automatizados.
-            </p>
-            <div class="tags">
-              <span class="tag">FastAPI</span>
-              <span class="tag">Docker</span>
-              <span class="tag">Cloud</span>
-              <span class="tag">Observability</span>
-            </div>
-          </article>
-
-          <article class="card featured">
-            <div class="card-label">AI Engineering · Projeto central</div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-top"><span class="project-type">AI Engineering</span><span class="project-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></span></div>
             <h3>AI Project Engineering</h3>
-            <a href="https://github.com/tsichero/ai-project-engineering" target="_blank" rel="noopener noreferrer">Ver projeto →</a>
-            <p>
-              Projeto end-to-end de Engenharia de IA com API, retrieval,
-              grounding, fontes, fallback seguro e integração configurável com LLM.
-              O modo demo permanece determinístico para testes sem credenciais.
-            </p>
-            <div class="tags">
-              <span class="tag">AI Engineering</span>
-              <span class="tag">RAG</span>
-              <span class="tag">Retrieval</span>
-              <span class="tag">FastAPI</span>
-              <span class="tag">Evaluation</span>
-            </div>
+            <p>Projeto de Engenharia de IA com recuperação de contexto, grounding, referências de fontes, fallback seguro e integração configurável com LLM. O modo de demonstração é determinístico; a integração externa depende de configuração e credenciais.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">FastAPI</span><span class="tag">Evaluation</span></div>
+            <a class="project-link" href="https://github.com/tsichero/ai-project-engineering" target="_blank" rel="noopener noreferrer">Ver repositório <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
           </article>
 
-          <article class="card">
-            <div class="card-label">AI Agents · Implementado</div>
+          <article class="project-card">
+            <div class="project-top"><span class="project-type">LLMs &amp; Retrieval</span><span class="project-icon"><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i></span></div>
+            <h3>RAG &amp; LLM Engineering</h3>
+            <p>Laboratório técnico para trabalhar recuperação de contexto, estruturação de prompts, integração de modelos e avaliação de respostas geradas por LLMs.</p>
+            <div class="tags"><span class="tag">LLMs</span><span class="tag">RAG</span><span class="tag">Prompt Engineering</span><span class="tag">Evaluation</span></div>
+            <a class="project-link" href="https://github.com/tsichero/rag-llm-engineering" target="_blank" rel="noopener noreferrer">Ver repositório <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top"><span class="project-type">AI Agents</span><span class="project-icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></span></div>
             <h3>AI Agent Orchestration</h3>
-            <a href="https://github.com/tsichero/ai-agent-orchestration" target="_blank" rel="noopener noreferrer">Ver projeto →</a>
-            <p>
-              Orquestração de workflows com roteamento determinístico e ferramenta
-              de cálculo limitada por AST, com tratamento de erros e testes de segurança.
-            </p>
-            <div class="tags">
-              <span class="tag">AI Agents</span>
-              <span class="tag">Tool Calling</span>
-              <span class="tag">Python</span>
-              <span class="tag">Testing</span>
-            </div>
+            <p>Workflow de agentes com roteamento determinístico e ferramenta de cálculo com escopo controlado por AST, acompanhado de tratamento de erros e testes.</p>
+            <div class="tags"><span class="tag">AI Agents</span><span class="tag">Tool Calling</span><span class="tag">Python</span><span class="tag">Testing</span></div>
+            <a class="project-link" href="https://github.com/tsichero/ai-agent-orchestration" target="_blank" rel="noopener noreferrer">Ver repositório <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
           </article>
 
-          <article class="card">
-            <div class="card-label">AI Agents · Automação</div>
-            <h3>Agente em Python</h3>
-            <a href="https://github.com/tsichero/Agente-em-Python" target="_blank" rel="noopener noreferrer">Ver projeto →</a>
-            <p>
-              Agente inteligente desenvolvido em Python para automatizar fluxos de trabalho,
-              integrar APIs e serviços e apoiar decisões com Inteligência Artificial.
-            </p>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">AI Agents</span>
-              <span class="tag">LLMs</span>
-              <span class="tag">REST APIs</span>
-              <span class="tag">Automation</span>
-            </div>
+          <article class="project-card">
+            <div class="project-top"><span class="project-type">Prompt Engineering</span><span class="project-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></span></div>
+            <h3>Prompt Engineering</h3>
+            <p>Laboratório de experimentação e avaliação de prompts, com comparação entre baseline e prompts estruturados, critérios de avaliação, testes e pipeline automatizado.</p>
+            <div class="tags"><span class="tag">Prompt Engineering</span><span class="tag">Python</span><span class="tag">Pytest</span><span class="tag">CI</span></div>
+            <a class="project-link" href="https://github.com/tsichero/prompt-engineering" target="_blank" rel="noopener noreferrer">Ver repositório <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
           </article>
 
-          <article class="card">
-            <div class="card-label">AI Application · Carreira</div>
+          <article class="project-card">
+            <div class="project-top"><span class="project-type">Data Analytics</span><span class="project-icon"><i class="fa-solid fa-chart-column" aria-hidden="true"></i></span></div>
+            <h3>Data Analytics Engineering</h3>
+            <p>Projeto de análise de dados com tratamento, exploração de base pública, geração de indicadores, visualização e documentação das conclusões.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">SQL</span><span class="tag">Analytics</span></div>
+            <a class="project-link" href="https://github.com/tsichero/data-analytics-engineering" target="_blank" rel="noopener noreferrer">Ver repositório <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top"><span class="project-type">Backend Development</span><span class="project-icon"><i class="fa-solid fa-server" aria-hidden="true"></i></span></div>
+            <h3>REST API com FastAPI</h3>
+            <p>API de cadastro com persistência em banco de dados, validação de dados, documentação de endpoints e estrutura organizada para evolução.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">REST</span><span class="tag">SQL</span></div>
+            <a class="project-link" href="https://github.com/tsichero/fastapi-backend-api" target="_blank" rel="noopener noreferrer">Ver repositório <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top"><span class="project-type">Cloud &amp; Infrastructure</span><span class="project-icon"><i class="fa-solid fa-cloud" aria-hidden="true"></i></span></div>
+            <h3>Cloud AI Platform</h3>
+            <p>Serviço estruturado com FastAPI e Docker, configuração por ambiente, readiness, request ID, logs e testes automatizados. O repositório não declara deploy em nuvem concluído.</p>
+            <div class="tags"><span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">Cloud</span><span class="tag">Observability</span></div>
+            <a class="project-link" href="https://github.com/tsichero/cloud-ai-platform" target="_blank" rel="noopener noreferrer">Ver repositório <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top"><span class="project-type">AI Application</span><span class="project-icon"><i class="fa-solid fa-route" aria-hidden="true"></i></span></div>
             <h3>TechPath AI</h3>
-            <a href="https://github.com/tsichero/techpath-ai" target="_blank" rel="noopener noreferrer">Ver projeto →</a>
-            <p>
-              Aplicação de IA voltada à orientação de carreira em tecnologia, com análise
-              de perfil, recomendações de carreira, trilhas de aprendizagem e roadmaps personalizados.
-            </p>
-            <div class="tags">
-              <span class="tag">Artificial Intelligence</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">APIs</span>
-              <span class="tag">Product</span>
-            </div>
+            <p>Aplicação de orientação de carreira em tecnologia, com proposta de análise de perfil, recomendações de caminhos profissionais e trilhas de aprendizagem.</p>
+            <div class="tags"><span class="tag">Artificial Intelligence</span><span class="tag">JavaScript</span><span class="tag">APIs</span><span class="tag">Product</span></div>
+            <a class="project-link" href="https://github.com/tsichero/techpath-ai" target="_blank" rel="noopener noreferrer">Ver repositório <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
           </article>
 
-          <article class="card">
-            <div class="card-label">Veterinary AI · Concluído</div>
+          <article class="project-card">
+            <div class="project-top"><span class="project-type">Veterinary Knowledge</span><span class="project-icon"><i class="fa-solid fa-book-medical" aria-hidden="true"></i></span></div>
             <h3>VetMind AI</h3>
-            <a href="https://github.com/tsichero/vetmind-ai" target="_blank" rel="noopener noreferrer">Ver projeto →</a>
-            <p>
-              Projeto que explora Inteligência Artificial aplicada à Medicina Veterinária,
-              com curadoria de fontes científicas, engenharia de prompts e uso do NotebookLM
-              como suporte ao estudo e ao raciocínio clínico.
-            </p>
-            <div class="tags">
-              <span class="tag">Veterinary AI</span>
-              <span class="tag">Prompt Engineering</span>
-              <span class="tag">NotebookLM</span>
-              <span class="tag">Clinical Reasoning</span>
-            </div>
+            <p>Projeto público de aprendizagem e organização de conhecimento em Medicina Veterinária, explorando curadoria de fontes e uso do NotebookLM como apoio ao estudo.</p>
+            <div class="tags"><span class="tag">Veterinary AI</span><span class="tag">NotebookLM</span><span class="tag">Knowledge Curation</span></div>
+            <a class="project-link" href="https://github.com/tsichero/vetmind-ai" target="_blank" rel="noopener noreferrer">Ver repositório <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
           </article>
+        </div>
+        <p class="project-note">Os projetos representam diferentes estágios de desenvolvimento. Consulte cada repositório para verificar escopo, instruções de execução, testes e limitações.</p>
+      </div>
+    </section>
 
-          <article class="card">
-            <div class="card-label">Automation · Python</div>
-            <h3>Automação de E-mails em Python</h3>
-            <a href="https://github.com/tsichero/email-automation-python" target="_blank" rel="noopener noreferrer">Ver projeto →</a>
-            <p>
-              Solução de automação de e-mails com processamento de destinatários via CSV,
-              templates, variáveis de ambiente, modo de teste seguro e estrutura preparada para integração contínua.
-            </p>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">Automation</span>
-              <span class="tag">CSV</span>
-              <span class="tag">GitHub Actions</span>
-              <span class="tag">Security</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-label">AI Portfolio · Multidisciplinar</div>
-            <h3>IA Projects</h3>
-            <a href="https://github.com/tsichero/Ia-projects" target="_blank" rel="noopener noreferrer">Ver projeto →</a>
-            <p>
-              Repositório que reúne experimentos e projetos de Inteligência Artificial em
-              visão computacional, NLP, áudio, análise de dados e automação.
-            </p>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">Computer Vision</span>
-              <span class="tag">NLP</span>
-              <span class="tag">Audio AI</span>
-              <span class="tag">Automation</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-label">Próxima etapa</div>
-            <h3>Deploy de aplicações de IA</h3>
-            <p>
-              Evolução dos projetos técnicos para aplicações acessíveis na web,
-              com API, documentação, variáveis de ambiente e infraestrutura Cloud.
-            </p>
-            <div class="tags">
-              <span class="tag">FastAPI</span>
-              <span class="tag">Docker</span>
-              <span class="tag">Azure</span>
-              <span class="tag">Cloud</span>
-            </div>
-          </article>
-
+    <section class="section" id="competencias">
+      <div class="container">
+        <span class="section-kicker">04 / Competências</span>
+        <h2 class="section-heading">Conhecimento aplicado em diferentes camadas.</h2>
+        <p class="section-lead">Competências organizadas por domínio de atuação, sem transformar familiaridade com ferramentas em alegações de especialização indiscriminada.</p>
+        <div class="skills-grid">
+          <article class="skill-card"><div class="skill-icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></div><div><h3>Inteligência Artificial</h3><p>IA Generativa, LLMs, RAG, NLP, Engenharia de Prompt, agentes, avaliação de respostas e integração de modelos.</p></div></article>
+          <article class="skill-card"><div class="skill-icon"><i class="fa-solid fa-code" aria-hidden="true"></i></div><div><h3>Desenvolvimento</h3><p>Python, FastAPI, APIs REST, JavaScript, Git, GitHub, testes e estruturação de aplicações.</p></div></article>
+          <article class="skill-card"><div class="skill-icon"><i class="fa-solid fa-database" aria-hidden="true"></i></div><div><h3>Dados &amp; Analytics</h3><p>SQL, Pandas, análise exploratória, tratamento de dados, indicadores, visualização e Power BI.</p></div></article>
+          <article class="skill-card"><div class="skill-icon"><i class="fa-solid fa-gears" aria-hidden="true"></i></div><div><h3>Automação &amp; Cloud</h3><p>Automação com Python e n8n, Docker, Azure, integração de serviços e workflows.</p></div></article>
+          <article class="skill-card"><div class="skill-icon"><i class="fa-solid fa-flask" aria-hidden="true"></i></div><div><h3>Experimentação &amp; Avaliação</h3><p>Prototipação, testes, comparação de abordagens, validação de comportamento e documentação de limitações.</p></div></article>
+          <article class="skill-card"><div class="skill-icon"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></div><div><h3>IA &amp; Negócios</h3><p>Identificação de oportunidades, estruturação de problemas e aplicação de tecnologia a necessidades reais.</p></div></article>
         </div>
       </div>
     </section>
 
-    <section id="competencias">
+    <section class="section" id="trajetoria">
       <div class="container">
-
-        <div class="section-label">03 · Competências</div>
-        <h2 class="section-title">Tecnologias que sustentam os projetos</h2>
-        <p class="section-intro">
-          Inspirada pela visão de Isaac Asimov sobre ciência e tecnologia, minha abordagem parte de uma premissa simples: conhecer uma ferramenta não é suficiente. É preciso compreender o problema, escolher a tecnologia adequada e transformá-la em uma solução que faça sentido.
-        </p>
-
-        <div class="skills">
-
-          <div class="card skill-group">
-            <h3>AI Engineering</h3>
-            <p>IA Generativa, LLMs, RAG, NLP, Engenharia de Prompt, AI Agents, avaliação de respostas e integração de modelos.
-          </div>
-
-          <div class="card skill-group">
-            <h3>Data & Backend</h3>
-            <p>Python, SQL, Pandas, FastAPI, APIs REST, modelagem de dados e desenvolvimento de aplicações.
-          </div>
-
-          <div class="card skill-group">
-            <h3>Cloud & Automation</h3>
-            <p>Azure, Docker, n8n, automação de processos, integração de serviços e workflows.
-          </div>
-
-          <div class="card skill-group">
-            <h3>AI & Business</h3>
-            <p>Estruturação de problemas, identificação de oportunidades e aplicação de IA orientada a necessidades reais.
-          </div>
-
-          <div class="card skill-group">
-            <h3>Analytics & BI</h3>
-            <p>Power BI, análise exploratória, indicadores, visualização e comunicação de insights.
-          </div>
-
-          <div class="card skill-group">
-            <h3>AI Application Development</h3>
-            <p>Desenvolvimento de aplicações com IA, prototipação de soluções e integração de recursos de Inteligência Artificial em aplicações práticas.</p>
-          </div>
-
-          <div class="card skill-group">
-            <h3>AI APIs & Model Integration</h3>
-            <p>Integração de APIs, modelos e serviços de IA para experimentação, desenvolvimento e construção de soluções.</p>
-          </div>
-
-          <div class="card skill-group">
-            <h3>AI Prototyping & Experimentation</h3>
-            <p>Prototipação, experimentação e validação de diferentes modelos, abordagens e workflows de Inteligência Artificial.</p>
-          </div>
-
-          <div class="card skill-group">
-            <h3>AI Strategy & Business Applications</h3>
-            <p>Aplicação estratégica de Inteligência Artificial a necessidades reais, conectando tecnologia, Dados e visão de negócio.</p>
-          </div>
-
-          <div class="card skill-group">
-            <h3>Domain Knowledge</h3>
-            <p>Medicina Veterinária e experiência prática aplicada ao desenvolvimento de soluções tecnológicas.</p>
-          </div>
-
+        <span class="section-kicker">05 / Trajetória</span>
+        <h2 class="section-heading">Experiência que conecta áreas.</h2>
+        <p class="section-lead">Minha trajetória combina atuação profissional, consultoria independente e desenvolvimento contínuo de projetos técnicos.</p>
+        <div class="experience-list">
+          <article class="experience-item">
+            <div class="experience-label">Inteligência Artificial</div>
+            <div><h3>Especialista em Inteligência Artificial · Consultoria independente</h3><p>Atuação em Engenharia de Prompt, IA Generativa e experimentação de soluções. Apoio à identificação de oportunidades de aplicação de IA, automação e melhoria de processos, considerando objetivos, contexto e viabilidade.</p></div>
+          </article>
+          <article class="experience-item">
+            <div class="experience-label">Educação</div>
+            <div><h3>Tutora · UNINOVE</h3><p>Atuação no acompanhamento acadêmico e suporte a estudantes, com orientação sobre atividades, processos e utilização de ambientes e ferramentas digitais de aprendizagem.</p></div>
+          </article>
+          <article class="experience-item">
+            <div class="experience-label">Medicina Veterinária</div>
+            <div><h3>Médica Veterinária</h3><p>Formação e experiência em Medicina Veterinária, com atuação em clínica médica e cirúrgica de pequenos animais. O conhecimento de domínio também contribui para minha perspectiva multidisciplinar no desenvolvimento de tecnologia.</p></div>
+          </article>
+          <article class="experience-item">
+            <div class="experience-label">Desenvolvimento</div>
+            <div><h3>Projetos independentes de IA &amp; Dados</h3><p>Construção de projetos técnicos e experimentos envolvendo aplicações com LLMs, recuperação de contexto, agentes, APIs, automação e análise de dados, com documentação e evidências nos repositórios públicos.</p></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="experiencia">
+    <section class="section" id="formacao">
       <div class="container">
-
-        <div class="section-label">04 · Experiência</div>
-        <h2 class="section-title">Experiência profissional</h2>
-
-        <div class="timeline">
-
-          <article class="timeline-item">
-            <h3>Especialista em Inteligência Artificial | Engenharia de Prompt & IA Visual</h3>
-            <div class="period">jun. 2023 · atual</div>
-            <p>
-              Atuação em Inteligência Artificial, com foco em Engenharia de Prompt, IA Generativa, IA Visual, IA Multimodal e experimentação com modelos e agentes de IA. Desenvolvimento, estruturação, avaliação e otimização de prompts para texto e imagem, experimentação com modelos generativos e construção de soluções e conteúdos visuais orientados por IA.
-            </p>
-          </article>
-
-          <article class="timeline-item">
-            <h3>Consultora em Inteligência Artificial | Autônoma</h3>
-            <div class="period">mar. 2023 · atual</div>
-            <p>
-              Atuação em consultoria de Inteligência Artificial, apoiando a identificação
-              de oportunidades de aplicação de IA, automação e otimização de processos.
-              Integração entre visão de negócio, Inteligência Artificial e Dados para
-              transformar necessidades e processos em soluções tecnológicas aplicáveis.
-            </p>
-          </article>
-
-          <article class="timeline-item">
-            <h3>Desenvolvedora de Projetos de IA | Confidencial</h3>
-            <div class="period">jun. 2023 · atual · Remoto</div>
-            <p>
-              Desenvolvimento de projetos e soluções baseadas em Inteligência Artificial,
-              explorando IA Generativa, LLMs, automação, integração de tecnologias e
-              aplicações orientadas a problemas reais.
-            </p>
-          </article>
-
-          <article class="timeline-item">
-            <h3>Gestora de Projetos de Inteligência Artificial</h3>
-            <div class="period">mar. 2024 · atual</div>
-            <p>
-              Atuação na estruturação e acompanhamento de projetos relacionados à
-              Inteligência Artificial, conectando necessidades, tecnologia, organização
-              de iniciativas e possibilidades de aplicação de IA.
-            </p>
-          </article>
-
-          <article class="timeline-item">
-            <h3>Tutora EAD | UNINOVE</h3>
-            <div class="period">Atuação profissional atual</div>
-            <p>
-              Atuação no suporte acadêmico e acompanhamento de alunos em ambiente de
-              educação a distância, utilizando plataformas digitais e ferramentas
-              tecnológicas para acompanhamento das atividades acadêmicas.
-            </p>
-          </article>
-
-          <article class="timeline-item">
-            <h3>Médica Veterinária</h3>
-            <div class="period">Experiência profissional</div>
-            <p>
-              Experiência profissional em Medicina Veterinária, com atuação clínica e
-              cirúrgica de pequenos animais e conhecimento de domínio aplicado à
-              construção de soluções tecnológicas.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="formacao">
-      <div class="container">
-
-        <div class="section-label">05 · Formação</div>
-        <h2 class="section-title">Formação acadêmica</h2>
-
+        <span class="section-kicker">06 / Formação</span>
+        <h2 class="section-heading">Formação acadêmica.</h2>
+        <p class="section-lead">Uma base multidisciplinar em saúde, negócios, Inteligência Artificial e Dados.</p>
         <div class="education-grid">
-
-          <article class="card">
-            <h3>MBA em Inteligência Artificial para Negócios</h3>
-            <p>Faculdade Exame · Concluído</p>
-          </article>
-
-          <article class="card">
-            <h3>Tecnologia em Ciências de Dados</h3>
-            <p>UNINOVE · Em andamento</p>
-          </article>
-
-          <article class="card">
-            <h3>Medicina Veterinária</h3>
-            <p>FMU · Concluído</p>
-          </article>
-
-          <article class="card">
-            <h3>Pós-graduação em Clínica Médica e Cirúrgica de Pequenos Animais</h3>
-            <p>UNISA · Concluída</p>
-          </article>
-
+          <article class="education-card"><span class="status">Concluído · 2024</span><h3>MBA em Inteligência Artificial para Negócios</h3><p>Faculdade Exame</p></article>
+          <article class="education-card"><span class="status">Em andamento</span><h3>Tecnologia em Ciência de Dados</h3><p>UNINOVE</p></article>
+          <article class="education-card"><span class="status">Concluído · 2019</span><h3>Medicina Veterinária</h3><p>FMU</p></article>
+          <article class="education-card"><span class="status">Concluído · 2021</span><h3>Pós-graduação em Clínica Médica e Cirúrgica de Pequenos Animais</h3><p>UNISA</p></article>
         </div>
       </div>
     </section>
 
+    <section class="section" id="contato">
+      <div class="container">
+        <div class="contact-panel">
+          <div>
+            <span class="section-kicker">Contato</span>
+            <h2>Vamos construir algo relevante?</h2>
+            <p>Estou aberta a conversas sobre oportunidades, projetos, consultoria e colaboração nas áreas de Inteligência Artificial, Dados e desenvolvimento de soluções.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="button button-primary" href="mailto:mmbjjs@gmail.com"><i class="fa-regular fa-envelope" aria-hidden="true"></i> Enviar e-mail</a>
+            <a class="button" href="https://www.linkedin.com/in/tain%C3%A3-sichero-dulcetti-65270b149/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <span>© 2026 Tainã Sichero Dulcetti</span>
-
-        <div class="footer-links">
-          <a href="https://github.com/tsichero" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/tain%C3%A3-sichero-dulcetti-65270b149/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="mailto:mmbjjs@gmail.com">E-mail</a>
-          <a href="https://wa.me/5511988419090?text=Ol%C3%A1%2C%20Tain%C3%A3!%20Encontrei%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20com%20voc%C3%AA%20sobre%20seus%20projetos%2C%20experi%C3%AAncia%20e%20atua%C3%A7%C3%A3o%20em%20Intelig%C3%AAncia%20Artificial%20e%20Dados.%20Meu%20contato%20%C3%A9%20referente%20ao%20seu%20portf%C3%B3lio%20e%20a%20uma%20poss%C3%ADvel%20oportunidade%20ou%20parceria%20profissional." target="_blank" rel="noopener noreferrer">Falar sobre oportunidades</a>
-        </div>
+    <div class="container footer-inner">
+      <span>© <span id="current-year">2026</span> Tainã Sichero Dulcetti. Feito com propósito e curiosidade.</span>
+      <div class="footer-links">
+        <a href="https://github.com/tsichero" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/tain%C3%A3-sichero-dulcetti-65270b149/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:mmbjjs@gmail.com">E-mail</a>
       </div>
     </div>
   </footer>
-
   <script src="app.js"></script>
-
 </body>
 </html>
